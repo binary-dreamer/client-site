@@ -1521,6 +1521,16 @@ input, select {
   transform: translateZ(-1px) scale(2); /* Create depth for parallax */
 }
 
+/* Style for the button to fix it in place */
+#subscription .card .btn {
+  position: absolute;
+  bottom: 20px; /* Adjust this value to position the button vertically */
+  left: 50%;
+  transform: translateX(-50%); /* Center the button horizontally */
+  width: calc(100% - 40px); /* Adjust width to fit within the card */
+  max-width: 300px; /* Limit the maximum width */
+}
+
 /* Ensure content appears above the overlay */
 #subscription .container {
   position: relative;
@@ -1565,13 +1575,13 @@ html {
   overflow: hidden; /* Prevent content overflow */
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15); /* Add shadow for depth */
   background: rgba(255, 255, 255, 0.9); /* White background with slight transparency */
-  backdrop-filter: blur(5px); /* Add a blur effect behind the card for a frosted glass look */
+  
 }
 
 /* Animation on hover */
 #subscription .card:hover {
   transform: translateY(-5px) scale(1.02); /* Slightly scale and lift on hover */
-  box-shadow: var(--box-shadow-hover); /* Deeper shadow on hover */
+ 
 }
 
 .text-teal {
@@ -1581,3 +1591,5 @@ html {
 .hidden-category {
     display: none;
   }
+
+ 
