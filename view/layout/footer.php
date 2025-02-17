@@ -141,7 +141,8 @@ $baseUrl = '/client-site';
 
 <!-- Your script.js -->
 <script src="<?= $baseUrl ?>/assets/js/script.js"></script>
-<script src="<?= $baseUrl ?>/assets/js/custom.js"></script>
+
+<script type="text/javascript" src="<?= $baseUrl ?>/assets/js/custom.js" defer></script>
 </body>
 
 </html>
