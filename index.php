@@ -2,13 +2,15 @@
 require_once $_SERVER['DOCUMENT_ROOT'] . $baseUrl . "/view/layout/header.php";
 ?>
 
-<!--BillBoardsection-->
+<!-- BillBoard Section -->
 <section id="billboard" class="position-relative d-flex align-items-center py-5 bg-light-gray"
-  style="background-image: url(<?= $baseUrl ?>/assets/images/banner_2.jpg); background-size: cover; background-repeat: no-repeat; background-position: center; height: 600px;">
+  style="background-image: url(<?= $baseUrl ?>/assets/images/banner_2.jpg); background-size: cover; background-repeat: no-repeat; background-position: center; min-height: 60vh;">
 
   <div class="container">
     <div class="row d-flex flex-column-reverse flex-md-row align-items-center">
-      <div class="col-md-5 offset-md-1 mt-5 mt-md-0 text-center text-md-start">
+      
+      <!-- Text Content -->
+      <div class="col-md-6 text-center text-md-start mt-4 mt-md-0">
         <div class="banner-content">
           <h1 class="main-title">Welcome To NovelNest!!</h1>
           <div class="text-animation">
@@ -16,16 +18,20 @@ require_once $_SERVER['DOCUMENT_ROOT'] . $baseUrl . "/view/layout/header.php";
           </div>
         </div>
       </div>
+
+      <!-- Image -->
       <div class="col-md-6 text-center">
         <div class="image-holder">
-          <img src="<?= $baseUrl ?>/assets/images/bb2.png" class="img-fluid" alt="banner">
+          <img src="<?= $baseUrl ?>/assets/images/bb2.png" class="img-fluid" alt="banner" style="max-width: 100%; height: auto;">
         </div>
       </div>
+      
     </div>
   </div>
 
 </section>
-<!--BillBoardsection end-->
+<!-- BillBoard Section End -->
+
 
 <!--Services-info-->
 <section id="company-services" class="padding-large pb-0">
@@ -380,7 +386,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . $baseUrl . "/view/layout/header.php";
 
 <!-- Category Section -->
 <section id="categories" class="padding-large pt-0">
-  <div class="your-element" data-aos="fade-in">
+  <!-- <div class="your-element" data-aos="fade-in"> -->
     <div class="container">
       <div class="section-title overflow-hidden mb-4">
         <h3 class="d-flex align-items-center">Categories</h3>
@@ -528,7 +534,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . $baseUrl . "/view/layout/header.php";
 
 <!--Books section-->
 <section id="best-selling-items" class="position-relative padding-large ">
-  <div class="your-element" data-aos="fade-in">
+  <!-- <div class="your-element" data-aos="fade-in"> -->
     <div class="container">
       <div class="section-title d-md-flex justify-content-between align-items-center mb-4">
         <h3 class="d-flex align-items-center">Books</h3>
@@ -827,7 +833,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . $baseUrl . "/view/layout/header.php";
 
 <!--subscription-->
 <section id="subscription" class="padding-large">
-<div class="your-element" data-aos="fade-in">
+<!-- <div class="your-element" data-aos="fade-in"> -->
   <div class="container">
     <div class="row text-center mb-5">
       <div class="col-12"><br>
@@ -1616,33 +1622,3 @@ require_once $_SERVER['DOCUMENT_ROOT'] . $baseUrl . "/view/layout/header.php";
 
 
 <?php require_once "view/layout/footer.php"; ?>
-<script type="text/javascript" src="<?= $baseUrl ?>/assets/js/custom.js"></script>
-
-
-    <!-- JavaScript at the bottom -->
-    <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    console.log("Script loaded and running!");
-
-    let seeMoreBtn = document.getElementById("seeMoreBtn");
-    let moreCategories = document.getElementById("moreCategories");
-
-    if (!seeMoreBtn || !moreCategories) {
-      console.error("Button or moreCategories section not found!");
-      return;
-    }
-
-    seeMoreBtn.addEventListener("click", function () {
-      console.log("Button clicked!");
-
-      if (moreCategories.classList.contains("d-none")) {
-        moreCategories.classList.remove("d-none");
-        this.textContent = "See Less";
-      } else {
-        moreCategories.classList.add("d-none");
-        this.textContent = "See More";
-      }
-    });
-  });
-
-</script>
