@@ -506,33 +506,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . $baseUrl . "/view/layout/header.php";
 
 <!-- Your categories section here -->
 
-<!-- JavaScript at the bottom -->
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    console.log("Script loaded and running!");
 
-    let seeMoreBtn = document.getElementById("seeMoreBtn");
-    let moreCategories = document.getElementById("moreCategories");
-
-    if (!seeMoreBtn || !moreCategories) {
-      console.error("Button or moreCategories section not found!");
-      return;
-    }
-
-    seeMoreBtn.addEventListener("click", function () {
-      console.log("Button clicked!");
-
-      if (moreCategories.classList.contains("d-none")) {
-        moreCategories.classList.remove("d-none");
-        this.textContent = "See Less";
-      } else {
-        moreCategories.classList.add("d-none");
-        this.textContent = "See More";
-      }
-    });
-  });
-
-</script>
 </body>
 
 
@@ -1639,6 +1613,34 @@ require_once $_SERVER['DOCUMENT_ROOT'] . $baseUrl . "/view/layout/header.php";
       </div>
     </section> -->
 
+
+<!-- JavaScript at the bottom -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    console.log("Script loaded and running!");
+
+    let seeMoreBtn = document.getElementById("seeMoreBtn");
+    let moreCategories = document.getElementById("moreCategories");
+
+    if (!seeMoreBtn || !moreCategories) {
+      console.error("Button or moreCategories section not found!");
+      return;
+    }
+
+    seeMoreBtn.addEventListener("click", function () {
+      console.log("Button clicked!");
+
+      if (moreCategories.classList.contains("d-none")) {
+        moreCategories.classList.remove("d-none");
+        this.textContent = "See Less";
+      } else {
+        moreCategories.classList.add("d-none");
+        this.textContent = "See More";
+      }
+    });
+  });
+
+</script>
 
 
 <?php require_once "view/layout/footer.php"; ?>

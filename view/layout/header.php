@@ -276,7 +276,7 @@ $userProfileImage = $_SESSION['user_profile'] ?? 'assets/images/default-avatar.j
 
                     <img src="<?= htmlspecialchars($userProfileImage); ?>"
                       alt="User Profile" width="35" height="35" class="rounded-circle">
-                    <span class="ms-2"><?= htmlspecialchars($_SESSION['user_name']); ?></span>
+                    <!-- <span class="ms-2"><?= htmlspecialchars($_SESSION['user_name']); ?></span> -->
                     <a class="btn btn-danger ms-3" href="/client-site/logout.php" style="font-size: 14px; padding: 5px 10px; line-height: 2;">
                       <i class="bi bi-box-arrow-right"></i> Logout
                     </a>
