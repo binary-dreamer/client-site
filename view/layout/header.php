@@ -60,6 +60,17 @@ $userProfileImage = $_SESSION['user_profile'] ?? 'assets/images/default-avatar.j
       }
     }
   </script>
+  <div id="google_translate_element"></div>
+
+<script type="text/javascript">
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+    }
+</script>
+
+<script type="text/javascript" 
+    src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
+</script>
 
   <!-- Favicon -->
   <link rel="icon" href="<?= $baseUrl ?>/assets/images/monogram.png" type="image/x-icon">
