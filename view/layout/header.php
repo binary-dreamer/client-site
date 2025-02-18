@@ -263,6 +263,9 @@ $userProfileImage = $_SESSION['user_profile'] ?? 'assets/images/default-avatar.j
               <li class="nav-item">
                 <a class="nav-link me-4" href="<?= $baseUrl ?>/view/pages/audiobooks.php">AudioBooks</a>
               </li>
+              <li class="nav-item">
+                <a class="nav-link me-4" href="<?= $baseUrl ?>/view/pages/journaling.php">Journaling</a>
+              </li>
               <!-- <li class="nav-item">
       <a class="nav-link me-4" href="index.html">About</a>
     </li> -->
