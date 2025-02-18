@@ -7,13 +7,13 @@ if (session_status() === PHP_SESSION_NONE) {
 }
 
 // Ensure profile image is set
-if (!isset($_SESSION['user_profile']) || empty($_SESSION['user_profile'])) {
-  $_SESSION['user_profile'] = "http://localhost/client-site/assets/images/default-avatar.jpg";
+if (!isset($_SESSION['user_profile_image']) || empty($_SESSION['user_profile_image'])) {
+  $_SESSION['user_profile_image'] = "http://localhost/NovelNest/assets/images/default-avatar.jpg";
 }
 
 // Check if user is logged in
 $userName = $_SESSION['user_name'] ?? null;
-$userProfileImage = $_SESSION['user_profile'] ?? 'assets/images/default-avatar.jpg';
+$userProfileImage = $_SESSION['user_profile_image'] ?? 'assets/images/default-avatar.jpg';
 ?>
 
 <!DOCTYPE html>
@@ -78,6 +78,8 @@ $userProfileImage = $_SESSION['user_profile'] ?? 'assets/images/default-avatar.j
   <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
   <!-- AOS CSS -->
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
 
 </head>
 
@@ -229,9 +231,49 @@ $userProfileImage = $_SESSION['user_profile'] ?? 'assets/images/default-avatar.j
     </div>
   </div>
 
+
+  <!-- Topbar Start -->
+  <div class="container-fluid topbar px-0 px-lg-4 bg-light py-2 d-none d-lg-block">
+    <div class="container">
+      <div class="row gx-0 align-items-center">
+        <div class="col-lg-8 text-center text-lg-start mb-lg-0">
+          <div class="d-flex flex-wrap">
+
+            <div class="ps-3">
+              <a href="mailto:example@gmail.com" class="text-black small"><i class="fas fa-envelope text-primary me-2"></i>novelnestinfo@gmail.com</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 text-center text-lg-end">
+          <div class="d-flex justify-content-end">
+            <div class="d-flex border-end border-primary pe-3">
+              <a class=" p-0 text-black me-3" href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
+              <a class=" p-0 text-black me-3" href="https://x.com/?mx=2"><i class="fa-brands fa-x-twitter"></i></a>
+              <a class=" p-0 text-black me-3" href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+              <a class=" p-0 text-black me-0" href="https://www.youtube.com/"><i class="fab fa-youtube"></i></a>
+            </div>
+            <div class="dropdown ms-3">
+              <a href="#" class="dropdown-toggle text-black" data-bs-toggle="dropdown">
+                <small><i class="fas fa-globe-europe text-primary me-2"></i> English</small>
+              </a>
+              <div class="dropdown-menu rounded">
+                <a href="#" class="dropdown-item text-black">English</a>
+                <a href="#" class="dropdown-item text-black">Bangla</a>
+                <a href="#" class="dropdown-item text-black">French</a>
+                <a href="#" class="dropdown-item text-black">Spanish</a>
+                <a href="#" class="dropdown-item text-black">Arabic</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Topbar End -->
+
+
   <header id="header" class="site-header">
-
-
 
     <nav id="header-nav" class="navbar navbar-expand-lg py-3">
       <div class="container">
@@ -246,7 +288,7 @@ $userProfileImage = $_SESSION['user_profile'] ?? 'assets/images/default-avatar.j
         </button>
         <div class="offcanvas offcanvas-end" tabindex="-1" id="bdNavbar" aria-labelledby="bdNavbarOffcanvasLabel">
           <div class="offcanvas-header px-4 pb-0">
-            <a class="navbar-brand" href="index.html">
+            <a class="navbar-brand" href="<?= $baseUrl ?>/index.php">
               <img src="<?= $baseUrl ?>/assets/images/logo.png" class="logo" style="max-width: 200px; height: auto; display: block;">
             </a>
             <button type="button" class="btn-close btn-close-black" data-bs-dismiss="offcanvas" aria-label="Close"
@@ -262,6 +304,9 @@ $userProfileImage = $_SESSION['user_profile'] ?? 'assets/images/default-avatar.j
               </li>
               <li class="nav-item">
                 <a class="nav-link me-4" href="<?= $baseUrl ?>/view/pages/audiobooks.php">AudioBooks</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link me-4" href="<?= $baseUrl ?>/view/pages/journaling.php">Journaling</a>
               </li>
               <!-- <li class="nav-item">
       <a class="nav-link me-4" href="index.html">About</a>
@@ -303,26 +348,6 @@ $userProfileImage = $_SESSION['user_profile'] ?? 'assets/images/default-avatar.j
         </div>
       </div>
     </nav>
-
-    <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const navLinks = document.querySelectorAll('#navbar .nav-link');
-    const currentPath = window.location.pathname;
-
-    navLinks.forEach(link => {
-      const linkPath = link.getAttribute('href')?.replace(/^.*\/\/[^\/]+/, '');
-
-      if (currentPath === linkPath) {
-        link.classList.add('active');
-      }
-
-      link.addEventListener('click', () => {
-        navLinks.forEach(navLink => navLink.classList.remove('active'));
-        link.classList.add('active');
-      });
-    });
-  });
-</script>
 
 
 
