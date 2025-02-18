@@ -304,26 +304,6 @@ $userProfileImage = $_SESSION['user_profile'] ?? 'assets/images/default-avatar.j
       </div>
     </nav>
 
-    <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const navLinks = document.querySelectorAll('#navbar .nav-link');
-    const currentPath = window.location.pathname;
-
-    navLinks.forEach(link => {
-      const linkPath = link.getAttribute('href')?.replace(/^.*\/\/[^\/]+/, '');
-
-      if (currentPath === linkPath) {
-        link.classList.add('active');
-      }
-
-      link.addEventListener('click', () => {
-        navLinks.forEach(navLink => navLink.classList.remove('active'));
-        link.classList.add('active');
-      });
-    });
-  });
-</script>
-
 
 
 
