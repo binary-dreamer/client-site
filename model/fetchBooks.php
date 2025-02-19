@@ -1,46 +1,40 @@
 <?php
-require_once $_SERVER['DOCUMENT_ROOT'] . "/client-site/config/DB.php"; // Adjust the path if needed
-$baseUrl = '/client-site';
+require_once $_SERVER['DOCUMENT_ROOT'] . "/client-site/config/db.php";
+
 $db = new DB();
 $conn = $db->connection();
 
-$genre_id = $_POST['genre_id'] ?? ''; // Get genre ID from AJAX request
+$genre_id = isset($_POST['genre_id']) ? intval($_POST['genre_id']) : 0;
 
-$sql = "SELECT * FROM books";
-if (!empty($genre_id)) {
-    $sql .= " WHERE genre_id = ?";
-}
-
-$stmt = $conn->prepare($sql);
-
-if (!empty($genre_id)) {
+if ($genre_id === 0) {
+    $sql = "SELECT books.*, genre.name AS genre_name FROM books 
+            JOIN genre ON books.genre_id = genre.id";
+    $stmt = $conn->prepare($sql);
+} else {
+    $sql = "SELECT books.*, genre.name AS genre_name FROM books 
+            JOIN genre ON books.genre_id = genre.id WHERE books.genre_id = ?";
+    $stmt = $conn->prepare($sql);
     $stmt->bind_param("i", $genre_id);
 }
 
 $stmt->execute();
 $result = $stmt->get_result();
-$books = $result->fetch_all(MYSQLI_ASSOC);
 
 $output = '';
-
-if ($books) {
-    foreach ($books as $book) {
+if ($result->num_rows > 0) {
+    while ($row = $result->fetch_assoc()) {
         $output .= '
-            <div class="col-md-3">
-                <div class="product-item">
-                    <figure class="product-style">
-                        <img src="' . $baseUrl . '/assets/images/book-cover/' . $book['cover_image'] . '" alt="' . $book['title'] . '" class="product-item">
-                    </figure>
-                    <figcaption>
-                        <h5>' . $book['title'] . '</h5>
-                        <span>' . $book['author'] . '</span>
-                    </figcaption>
-                </div>
-            </div>';
+        <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+            <div class="card position-relative p-3 border rounded-3">
+                <img src="/NovelNest/assets/images/book-cover/' . htmlspecialchars($row['cover_image']) . '" 
+                     class="img-fluid shadow-sm" alt="' . htmlspecialchars($row['title']) . '">
+                <h6 class="mt-4 mb-0 fw-bold"><a href="#">' . htmlspecialchars($row['title']) . '</a></h6>
+                <p class="my-2 fs-6 text-black-50">' . htmlspecialchars($row['author']) . '</p>
+            </div>
+        </div>';
     }
 } else {
-    $output = '<div class="col-12"><p class="text-center">No books found.</p></div>';
+    $output = '<p class="text-center">No books found for this genre.</p>';
 }
 
 echo $output;
-?>

@@ -2,14 +2,15 @@
 $baseUrl = '/NovelNest';
 require_once $_SERVER['DOCUMENT_ROOT'] . $baseUrl . '/model/BooksClass.php';
 
+header('Content-Type: application/json');
+header("Access-Control-Allow-Origin: *");
+
 $BooksClass = new BookClass();
 
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     $books = $BooksClass->getAllBooks();
-    if ($books) {
-        foreach ($books as &$book) {
-            $book['cover_image'] = $baseUrl . '/assets/images/book-cover/' . $book['cover_image'];
-        }
+    
+    if (!empty($books)) {
         echo json_encode([
             "status" => "success",
             "data" => $books
@@ -17,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     } else {
         echo json_encode([
             "status" => "error",
-            "message" => "Failed to fetch books."
+            "message" => "No books found."
         ]);
     }
 }
