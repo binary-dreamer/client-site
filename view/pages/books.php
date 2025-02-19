@@ -16,7 +16,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . $baseUrl . "/view/layout/header.php"; ?
 
 <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
   <h1 class="text-primary">Books</h1>
-  <h5 class=" mb-4">"Find Your Escape!: Because reality is overrated.<br> Welcome to NovelNest—your cozy escape from adulting!"</h5>
+  <h5 class=" mb-4">Find Your Escape!: Because reality is overrated.<br> Welcome to NovelNest—your cozy escape from adulting!</h5>
   <p class="mb-0"></p>
 </div>
 

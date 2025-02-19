@@ -113,7 +113,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . $baseUrl . "/view/layout/header.php";
                 <p class="bg-primary py-1 px-3 fs-6 text-white rounded-2">10% off</p>
               </div>
               <img src="<?= $baseUrl ?>/assets/images/product-item1.png" class="img-fluid shadow-sm" alt="product item">
-              <h6 class="mt-4 mb-0 fw-bold"><a href="<?= $baseUrl ?>/view/pages/singlepage.php">House of Sky Breath</a></h6>
+              <h6 class="mt-4 mb-0 fw-bold"><a href="<?= $baseUrl ?>/view/pages/bookPage.php">House of Sky Breath</a></h6>
               <div class="review-content d-flex">
                 <p class="my-2 me-2 fs-6 text-black-50">Lauren Asher</p>
 

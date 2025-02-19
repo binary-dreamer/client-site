@@ -82,3 +82,41 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+//rating
+document.addEventListener('DOMContentLoaded', function() {
+  const stars = document.querySelectorAll('.star');
+  const ratingValue = document.getElementById('rating-value');
+
+  stars.forEach(star => {
+      star.addEventListener('click', function() {
+          const value = this.getAttribute('data-value');
+          setRating(value);
+      });
+
+      star.addEventListener('mouseover', function() {
+          const value = this.getAttribute('data-value');
+          highlightStars(value);
+      });
+
+      star.addEventListener('mouseout', function() {
+          const value = ratingValue.innerText;
+          highlightStars(value);
+      });
+  });
+
+  function setRating(value) {
+      ratingValue.innerText = value;
+      highlightStars(value);
+  }
+
+  function highlightStars(value) {
+      stars.forEach(star => {
+          if (star.getAttribute('data-value') <= value) {
+              star.classList.add('selected');
+          } else {
+              star.classList.remove('selected');
+          }
+      });
+  }
+});
+
