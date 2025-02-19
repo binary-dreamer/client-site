@@ -92,7 +92,7 @@ $baseUrl = '/client-site';
             <div class="footer-menu contact-item">
               <h5 class="widget-title text-capitalize pb-2">Contact Us</h5>
               <p>Do you have any queries or suggestions? <a href="mailto:"
-                  class="text-decoration-underline">novelnestinfot@gmail.com</a></p>
+                  class="text-decoration-underline">novelnestinfo@gmail.com</a></p>
               <p>If you need support? Just give us a call. <a href="#" class="text-decoration-underline">+55 111 222
                   333 44</a></p>
             </div>
@@ -108,7 +108,7 @@ $baseUrl = '/client-site';
     <div class="d-flex flex-wrap justify-content-between">
       <div class="ship-and-payment d-flex gap-md-5 flex-wrap">
         <div class="shipping d-flex">
-          <p>novelnestinfot@gmail.com</p>
+          <p>novelnestinfo@gmail.com</p>
         </div>
       </div>
       <div class="copyright">
