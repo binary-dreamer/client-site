@@ -1,4 +1,3 @@
-
 /*--------------------------------------------------------------
 /** 1. VARIABLES
 --------------------------------------------------------------*/
@@ -36,9 +35,16 @@
 }
 
 @media (min-width: 1850px) {
-  .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+
+  .container,
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container-xl,
+  .container-xxl {
     max-width: 1540px;
-    overflow-x: hidden; /* Prevent horizontal overflow */
+    overflow-x: hidden;
+    /* Prevent horizontal overflow */
   }
 }
 
@@ -48,7 +54,9 @@
 
 /* 2.1 General Styles
 /*----------------------------------------------*/
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -61,7 +69,8 @@ body {
   font-size: 1.2rem;
   font-weight: 400;
   margin: 0;
-  overflow-x: hidden; /* Prevent horizontal scrolling */
+  overflow-x: hidden;
+  /* Prevent horizontal scrolling */
 }
 
 p {
@@ -159,7 +168,12 @@ hr {
 
 /* 2.2 Section Title
 /*----------------------------------------------*/
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--heading-font);
   text-transform: capitalize;
   letter-spacing: 0.03em;
@@ -167,7 +181,9 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.2;
 }
 
-h4, h5, h6 {
+h4,
+h5,
+h6 {
   color: var(--light-black-color);
 }
 
@@ -249,7 +265,11 @@ h6 {
 
 .btn:hover,
 .btn:focus-visible,
-.btn-check:checked + .btn, .btn.active, .btn.show, .btn:first-child:active, :not(.btn-check) + .btn:active {
+.btn-check:checked+.btn,
+.btn.active,
+.btn.show,
+.btn:first-child:active,
+:not(.btn-check)+.btn:active {
   color: var(--white-color);
   background-color: var(--black-color);
 }
@@ -355,13 +375,15 @@ th {
   border: none;
 }
 
-.active > .page-link, .page-link.active {
+.active>.page-link,
+.page-link.active {
   color: var(--primary-color);
   background: none;
   border: none;
 }
 
-.disabled > .page-link, .page-link.disabled {
+.disabled>.page-link,
+.page-link.disabled {
   color: var(--gray-color-500);
   background: none;
   border: none;
@@ -381,6 +403,7 @@ th {
     transform: translateY(1rem);
     opacity: 0;
   }
+
   100% {
     transform: translateY(0rem);
     opacity: 1;
@@ -504,9 +527,12 @@ th {
   4% {
     transform: rotateZ(0deg) translateX(-18px);
   }
-  13%, 54% {
+
+  13%,
+  54% {
     transform: rotateZ(180deg) translateX(-18px);
   }
+
   63% {
     transform: rotateZ(0deg) translateX(-18px);
   }
@@ -516,9 +542,12 @@ th {
   5.86% {
     transform: rotateZ(0deg) translateX(-18px);
   }
-  14.74%, 55.86% {
+
+  14.74%,
+  55.86% {
     transform: rotateZ(180deg) translateX(-18px);
   }
+
   64.74% {
     transform: rotateZ(0deg) translateX(-18px);
   }
@@ -528,9 +557,12 @@ th {
   7.72% {
     transform: rotateZ(0deg) translateX(-18px);
   }
-  16.48%, 57.72% {
+
+  16.48%,
+  57.72% {
     transform: rotateZ(180deg) translateX(-18px);
   }
+
   66.48% {
     transform: rotateZ(0deg) translateX(-18px);
   }
@@ -540,9 +572,12 @@ th {
   9.58% {
     transform: rotateZ(0deg) translateX(-18px);
   }
-  18.22%, 59.58% {
+
+  18.22%,
+  59.58% {
     transform: rotateZ(180deg) translateX(-18px);
   }
+
   68.22% {
     transform: rotateZ(0deg) translateX(-18px);
   }
@@ -552,9 +587,12 @@ th {
   11.44% {
     transform: rotateZ(0deg) translateX(-18px);
   }
-  19.96%, 61.44% {
+
+  19.96%,
+  61.44% {
     transform: rotateZ(180deg) translateX(-18px);
   }
+
   69.96% {
     transform: rotateZ(0deg) translateX(-18px);
   }
@@ -564,9 +602,12 @@ th {
   13.3% {
     transform: rotateZ(0deg) translateX(-18px);
   }
-  21.7%, 63.3% {
+
+  21.7%,
+  63.3% {
     transform: rotateZ(180deg) translateX(-18px);
   }
+
   71.7% {
     transform: rotateZ(0deg) translateX(-18px);
   }
@@ -576,9 +617,12 @@ th {
   15.16% {
     transform: rotateZ(0deg) translateX(-18px);
   }
-  23.44%, 65.16% {
+
+  23.44%,
+  65.16% {
     transform: rotateZ(180deg) translateX(-18px);
   }
+
   73.44% {
     transform: rotateZ(0deg) translateX(-18px);
   }
@@ -588,9 +632,12 @@ th {
   17.02% {
     transform: rotateZ(0deg) translateX(-18px);
   }
-  25.18%, 67.02% {
+
+  25.18%,
+  67.02% {
     transform: rotateZ(180deg) translateX(-18px);
   }
+
   75.18% {
     transform: rotateZ(0deg) translateX(-18px);
   }
@@ -600,9 +647,12 @@ th {
   18.88% {
     transform: rotateZ(0deg) translateX(-18px);
   }
-  26.92%, 68.88% {
+
+  26.92%,
+  68.88% {
     transform: rotateZ(180deg) translateX(-18px);
   }
+
   76.92% {
     transform: rotateZ(0deg) translateX(-18px);
   }
@@ -612,9 +662,12 @@ th {
   20.74% {
     transform: rotateZ(0deg) translateX(-18px);
   }
-  28.66%, 70.74% {
+
+  28.66%,
+  70.74% {
     transform: rotateZ(180deg) translateX(-18px);
   }
+
   78.66% {
     transform: rotateZ(0deg) translateX(-18px);
   }
@@ -624,9 +677,12 @@ th {
   22.6% {
     transform: rotateZ(0deg) translateX(-18px);
   }
-  30.4%, 72.6% {
+
+  30.4%,
+  72.6% {
     transform: rotateZ(180deg) translateX(-18px);
   }
+
   80.4% {
     transform: rotateZ(0deg) translateX(-18px);
   }
@@ -636,9 +692,12 @@ th {
   24.46% {
     transform: rotateZ(0deg) translateX(-18px);
   }
-  32.14%, 74.46% {
+
+  32.14%,
+  74.46% {
     transform: rotateZ(180deg) translateX(-18px);
   }
+
   82.14% {
     transform: rotateZ(0deg) translateX(-18px);
   }
@@ -648,9 +707,12 @@ th {
   26.32% {
     transform: rotateZ(0deg) translateX(-18px);
   }
-  33.88%, 76.32% {
+
+  33.88%,
+  76.32% {
     transform: rotateZ(180deg) translateX(-18px);
   }
+
   83.88% {
     transform: rotateZ(0deg) translateX(-18px);
   }
@@ -660,9 +722,12 @@ th {
   28.18% {
     transform: rotateZ(0deg) translateX(-18px);
   }
-  35.62%, 78.18% {
+
+  35.62%,
+  78.18% {
     transform: rotateZ(180deg) translateX(-18px);
   }
+
   85.62% {
     transform: rotateZ(0deg) translateX(-18px);
   }
@@ -672,9 +737,12 @@ th {
   30.04% {
     transform: rotateZ(0deg) translateX(-18px);
   }
-  37.36%, 80.04% {
+
+  37.36%,
+  80.04% {
     transform: rotateZ(180deg) translateX(-18px);
   }
+
   87.36% {
     transform: rotateZ(0deg) translateX(-18px);
   }
@@ -684,9 +752,12 @@ th {
   31.9% {
     transform: rotateZ(0deg) translateX(-18px);
   }
-  39.1%, 81.9% {
+
+  39.1%,
+  81.9% {
     transform: rotateZ(180deg) translateX(-18px);
   }
+
   89.1% {
     transform: rotateZ(0deg) translateX(-18px);
   }
@@ -696,9 +767,12 @@ th {
   33.76% {
     transform: rotateZ(0deg) translateX(-18px);
   }
-  40.84%, 83.76% {
+
+  40.84%,
+  83.76% {
     transform: rotateZ(180deg) translateX(-18px);
   }
+
   90.84% {
     transform: rotateZ(0deg) translateX(-18px);
   }
@@ -708,9 +782,12 @@ th {
   35.62% {
     transform: rotateZ(0deg) translateX(-18px);
   }
-  42.58%, 85.62% {
+
+  42.58%,
+  85.62% {
     transform: rotateZ(180deg) translateX(-18px);
   }
+
   92.58% {
     transform: rotateZ(0deg) translateX(-18px);
   }
@@ -720,9 +797,12 @@ th {
   37.48% {
     transform: rotateZ(0deg) translateX(-18px);
   }
-  44.32%, 87.48% {
+
+  44.32%,
+  87.48% {
     transform: rotateZ(180deg) translateX(-18px);
   }
+
   94.32% {
     transform: rotateZ(0deg) translateX(-18px);
   }
@@ -732,15 +812,22 @@ th {
   4% {
     transform: rotateZ(90deg);
   }
-  10%, 40% {
+
+  10%,
+  40% {
     transform: rotateZ(0deg);
   }
-  46%, 54% {
+
+  46%,
+  54% {
     transform: rotateZ(90deg);
   }
-  60%, 90% {
+
+  60%,
+  90% {
     transform: rotateZ(0deg);
   }
+
   96% {
     transform: rotateZ(90deg);
   }
@@ -750,15 +837,22 @@ th {
   4% {
     transform: rotateZ(-90deg);
   }
-  10%, 40% {
+
+  10%,
+  40% {
     transform: rotateZ(0deg);
   }
-  46%, 54% {
+
+  46%,
+  54% {
     transform: rotateZ(-90deg);
   }
-  60%, 90% {
+
+  60%,
+  90% {
     transform: rotateZ(0deg);
   }
+
   96% {
     transform: rotateZ(-90deg);
   }
@@ -768,20 +862,29 @@ th {
   4% {
     transform: rotateZ(-90deg);
   }
-  10%, 40% {
+
+  10%,
+  40% {
     transform: rotateZ(0deg);
     transform-origin: 2px 2px;
   }
-  40.01%, 59.99% {
+
+  40.01%,
+  59.99% {
     transform-origin: 30px 2px;
   }
-  46%, 54% {
+
+  46%,
+  54% {
     transform: rotateZ(90deg);
   }
-  60%, 90% {
+
+  60%,
+  90% {
     transform: rotateZ(0deg);
     transform-origin: 2px 2px;
   }
+
   96% {
     transform: rotateZ(-90deg);
   }
@@ -985,6 +1088,7 @@ th {
 }
 
 @media only screen and (max-width: 991px) {
+
   .search-popup .cat-list-item,
   .search-popup-form .form-control {
     font-size: 1.425em;
@@ -999,6 +1103,7 @@ th {
 }
 
 @media only screen and (max-width: 575px) {
+
   .search-popup .cat-list-item,
   .search-popup-form .form-control {
     font-size: 1.125em;
@@ -1079,7 +1184,8 @@ th {
   --bs-dropdown-zindex: 99999;
 }
 
-.dropdown-item.active, .dropdown-item:active {
+.dropdown-item.active,
+.dropdown-item:active {
   color: var(--bs-dropdown-link-active-color);
   text-decoration: none;
 }
@@ -1095,6 +1201,7 @@ th {
 }
 
 @media only screen and (max-width: 500px) {
+
   .cart-dropdown .dropdown-menu,
   .wishlist-dropdown .dropdown-menu {
     min-width: fit-content;
@@ -1160,18 +1267,24 @@ th {
   animation:
     typing 2s steps(30, end),
     cursor 0.4s step-end infinite alternate;
-  white-space: normal; /* Allow text to wrap */
-  display: inline-block; /* Ensure the element takes only the width it needs */
+  white-space: normal;
+  /* Allow text to wrap */
+  display: inline-block;
+  /* Ensure the element takes only the width it needs */
 }
 
 /* cursor blinking */
 @keyframes cursor {
-  50% { border-color: transparent; }
+  50% {
+    border-color: transparent;
+  }
 }
 
 /* typing effect */
 @keyframes typing {
-  from { width: 0; }
+  from {
+    width: 0;
+  }
 }
 
 /* 4.3 Icon Box - Company Services
@@ -1358,14 +1471,18 @@ select#input-sort {
 }
 
 .text-animation {
-  height: 100px; /* Fixed height */
+  height: 100px;
+  /* Fixed height */
   overflow: hidden;
-  margin-bottom: 20px; /* Add margin to maintain spacing */
-  position: relative; /* Add positioning context */
+  margin-bottom: 20px;
+  /* Add margin to maintain spacing */
+  position: relative;
+  /* Add positioning context */
 }
 
 .dynamic-text {
-  position: absolute; /* Change to absolute positioning */
+  position: absolute;
+  /* Change to absolute positioning */
   width: 100%;
   font-size: 1.2em;
   animation: slideText 12s infinite;
@@ -1382,9 +1499,11 @@ select#input-sort {
     letter-spacing: -10px;
     opacity: 0;
   }
+
   50% {
     letter-spacing: 10px;
   }
+
   100% {
     letter-spacing: normal;
     opacity: 1;
@@ -1392,28 +1511,41 @@ select#input-sort {
 }
 
 @keyframes slideText {
-  0%, 33% {
+
+  0%,
+  33% {
     transform: translateY(0);
   }
-  34%, 66% {
+
+  34%,
+  66% {
     transform: translateY(-100%);
   }
-  67%, 100% {
+
+  67%,
+  100% {
     transform: translateY(-200%);
   }
 }
 
 @keyframes contentChange {
-  0%, 33% {
+
+  0%,
+  33% {
     content: "'To everyone whose favorite vacation is a really good book'";
   }
-  34%, 66% {
+
+  34%,
+  66% {
     content: "' For the strength inside me that I found when I had to. And indomitable hope. '";
   }
-  67%, 100% {
+
+  67%,
+  100% {
     content: "' To 12-year-old, 17-year-old, 21-year-old, and 30-year-old me. You were never the disaster you thought you were. It's all going to work out. '";
   }
 }
+
 /* billboard end */
 
 /*** Single Page Hero Header Start ***/
@@ -1434,8 +1566,10 @@ select#input-sort {
 
 .category-image {
   width: 100%;
-  height: 300px; /* Fixed height for all images */
-  object-fit: cover; /* Maintains aspect ratio while filling container */
+  height: 300px;
+  /* Fixed height for all images */
+  object-fit: cover;
+  /* Maintains aspect ratio while filling container */
 }
 
 .category-box .card {
@@ -1481,7 +1615,8 @@ select#input-sort {
   align-items: center;
 }
 
-input, select {
+input,
+select {
   padding: 8px;
   font-size: 14px;
   border: 1px solid #12bfa58a;
@@ -1501,11 +1636,15 @@ input, select {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-attachment: fixed; /* This enables the parallax effect */
+  background-attachment: fixed;
+  /* This enables the parallax effect */
   position: relative;
-  min-height: 100vh; /* Ensure enough height for parallax effect to be visible */
-  transform-style: preserve-3d; /* Enhance the 3D effect */
-  perspective: 1000px; /* Add depth to the parallax */
+  min-height: 100vh;
+  /* Ensure enough height for parallax effect to be visible */
+  transform-style: preserve-3d;
+  /* Enhance the 3D effect */
+  perspective: 1000px;
+  /* Add depth to the parallax */
 }
 
 /* Add an overlay to ensure text remains readable */
@@ -1518,24 +1657,30 @@ input, select {
   bottom: 0;
   background-color: rgba(255, 255, 255, 0);
   border-radius: 10px;
-  transform: translateZ(-1px) scale(2); /* Create depth for parallax */
+  transform: translateZ(-1px) scale(2);
+  /* Create depth for parallax */
 }
 
 /* Style for the button to fix it in place */
 #subscription .card .btn {
   position: absolute;
-  bottom: 20px; /* Adjust this value to position the button vertically */
+  bottom: 20px;
+  /* Adjust this value to position the button vertically */
   left: 50%;
-  transform: translateX(-50%); /* Center the button horizontally */
-  width: calc(100% - 40px); /* Adjust width to fit within the card */
-  max-width: 300px; /* Limit the maximum width */
+  transform: translateX(-50%);
+  /* Center the button horizontally */
+  width: calc(100% - 40px);
+  /* Adjust width to fit within the card */
+  max-width: 300px;
+  /* Limit the maximum width */
 }
 
 /* Ensure content appears above the overlay */
 #subscription .container {
   position: relative;
   z-index: 1;
-  transform: translateZ(0); /* Ensure content stays on top */
+  transform: translateZ(0);
+  /* Ensure content stays on top */
 }
 
 /* Add smooth scrolling to the whole page for better parallax effect */
@@ -1568,61 +1713,105 @@ html {
 
 /* Style for each card */
 #subscription .card {
-  flex: 1 1 300px; /* Make cards flexible, with a minimum width of 300px */
-  margin: 15px; /* Add space between cards */
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for transform and box-shadow */
-  border-radius: 10px; /* Rounded corners for cards */
-  overflow: hidden; /* Prevent content overflow */
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15); /* Add shadow for depth */
-  background: rgba(255, 255, 255, 0.9); /* White background with slight transparency */
-  
+  flex: 1 1 300px;
+  /* Make cards flexible, with a minimum width of 300px */
+  margin: 15px;
+  /* Add space between cards */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  /* Smooth transition for transform and box-shadow */
+  border-radius: 10px;
+  /* Rounded corners for cards */
+  overflow: hidden;
+  /* Prevent content overflow */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  /* Add shadow for depth */
+  background: rgba(255, 255, 255, 0.9);
+  /* White background with slight transparency */
+
 }
 
 /* Animation on hover */
 #subscription .card:hover {
-  transform: translateY(-5px) scale(1.02); /* Slightly scale and lift on hover */
- 
+  transform: translateY(-5px) scale(1.02);
+  /* Slightly scale and lift on hover */
+
 }
 
 .text-teal {
-    color: #008080;  /* This is the teal color code */
+  color: #008080;
+  /* This is the teal color code */
 }
 
 .hidden-category {
-    display: none;
-  }
+  display: none;
+}
 
 
-  /* active button for books category */
-  [data-tab-content] {
-    display: none;
-  }
+/* active button for books category */
+[data-tab-content] {
+  display: none;
+}
 
-  [data-tab-content].active {
-    display: block;
-  }
+[data-tab-content].active {
+  display: block;
+}
 
-  .tabs {
-    display: flex;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    gap: 20px;
-    margin-bottom: 30px;
-  }
+.tabs {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  gap: 20px;
+  margin-bottom: 30px;
+}
 
-  .tab {
-    cursor: pointer;
-    padding: 10px 20px;
-    border-radius: 5px;
-    transition: all 0.3s ease;
-  }
+.tab {
+  cursor: pointer;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
 
-  .tab:hover {
-    background: #f0f0f0;
-  }
+.tab:hover {
+  background: #f0f0f0;
+}
 
-  .tab.active {
-    background: #20C997;
-    color: white;
-  }
+.tab.active {
+  background: #20C997;
+  color: white;
+}
+
+/* book page  */
+
+.card img {
+  width: 100%;
+  height: 250px;
+  /* Set a fixed height */
+  object-fit: cover;
+  /* Ensure images cover the area without distortion */
+}
+
+.card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card h6 {
+  min-height: 50px;
+  /* Adjust based on text length */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.card p {
+  min-height: 25px;
+}
+
+#book-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+}
