@@ -318,6 +318,7 @@ $userProfileImage = $_SESSION['user_profile_image'] ?? 'assets/images/default-av
               <ul class="d-flex justify-content-end list-unstyled mb-0">
                 <li class="nav-item pe-3">
                   <?php if (isset($_SESSION['user_id'])): ?>
+
                     <!-- Dropdown for logged-in users -->
                     <div class="dropdown">
                       <div class="d-flex align-items-center dropdown-toggle" id="profileDropdown" data-bs-toggle="dropdown" aria-expanded="false" style="cursor: pointer;">
@@ -334,6 +335,7 @@ $userProfileImage = $_SESSION['user_profile_image'] ?? 'assets/images/default-av
                         <li><a class="dropdown-item text-danger" href="/client-site/logout.php"><i class="bi bi-box-arrow-right"></i> Logout</a></li>
                       </ul>
                     </div>
+
                   <?php else: ?>
                     <!-- Show Sign Up and Sign In buttons before login -->
                     <a href="<?= $adminUrl ?>/view/signup/signup.php" class="btn btn-primary me-2" style="font-size: 14px; padding: 5px 10px; line-height: 2;">
