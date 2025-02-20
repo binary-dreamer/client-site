@@ -92,6 +92,7 @@ $userProfileImage = $_SESSION['user_profile_image'] ?? 'assets/images/default-av
   <!-- AOS CSS -->
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
 
 </head>
@@ -351,28 +352,32 @@ $userProfileImage = $_SESSION['user_profile_image'] ?? 'assets/images/default-av
               <ul class="d-flex justify-content-end list-unstyled mb-0">
                 <li class="nav-item pe-3">
                   <?php if (isset($_SESSION['user_id'])): ?>
-                    <!-- Show profile image, username, and logout button after login -->
 
-                    <img src="<?= htmlspecialchars($userProfileImage); ?>"
-                      alt="User Profile" width="35" height="35" class="rounded-circle">
-                    <span class="ms-2"><?= htmlspecialchars($_SESSION['user_name']); ?></span>
-                    <a class="btn btn-danger ms-3" href="/client-site/logout.php" style="font-size: 14px; padding: 5px 10px; line-height: 2;">
-                      <i class="bi bi-box-arrow-right"></i> Logout
-                    </a>
+                    <!-- Dropdown for logged-in users -->
+                    <div class="dropdown">
+                      <div class="d-flex align-items-center dropdown-toggle" id="profileDropdown" data-bs-toggle="dropdown" aria-expanded="false" style="cursor: pointer;">
+                        <img src="<?= htmlspecialchars($userProfileImage); ?>" alt="User Profile" width="35" height="35" class="rounded-circle">
+                        <span class="ms-2"><?= htmlspecialchars($_SESSION['user_name']); ?></span>
+                      </div>
+                      <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">
+                        <li><a class="dropdown-item" href="/account-settings.php">Account Settings</a></li>
+                        <li><a class="dropdown-item" href="<?= $baseUrl ?>/view/pages/subscription.php">Subscription</a></li>
+                        <li><a class="dropdown-item" href="<?= $baseUrl ?>/view/pages/journaling.php">Journaling</a></li>
+                        <li>
+                          <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item text-danger" href="/client-site/logout.php"><i class="bi bi-box-arrow-right"></i> Logout</a></li>
+                      </ul>
+                    </div>
+
                   <?php else: ?>
                     <!-- Show Sign Up and Sign In buttons before login -->
-                    <a href="<?= $adminUrl ?>/view/signup/signup.php"
-                      class="btn btn-primary me-2"
-                      style="font-size: 14px; padding: 5px 10px; line-height: 2;">
+                    <a href="<?= $adminUrl ?>/view/signup/signup.php" class="btn btn-primary me-2" style="font-size: 14px; padding: 5px 10px; line-height: 2;">
                       Sign Up
                     </a>
-
-                    <a href="<?= $adminUrl ?>/view/admin/adminSigninForm.php"
-                      class="btn btn-secondary"
-                      style="font-size: 14px; padding: 5px 10px; line-height: 2;">
+                    <a href="<?= $adminUrl ?>/view/admin/adminSigninForm.php" class="btn btn-secondary" style="font-size: 14px; padding: 5px 10px; line-height: 2;">
                       Sign In
                     </a>
-
                   <?php endif; ?>
                 </li>
               </ul>

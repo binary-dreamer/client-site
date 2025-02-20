@@ -113,7 +113,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . $baseUrl . "/view/layout/header.php";
                 <p class="bg-primary py-1 px-3 fs-6 text-white rounded-2">10% off</p>
               </div>
               <img src="<?= $baseUrl ?>/assets/images/product-item1.png" class="img-fluid shadow-sm" alt="product item">
-              <h6 class="mt-4 mb-0 fw-bold"><a href="<?= $baseUrl ?>/view/pages/singlepage.php">House of Sky Breath</a></h6>
+              <h6 class="mt-4 mb-0 fw-bold"><a href="<?= $baseUrl ?>/view/pages/bookPage.php">House of Sky Breath</a></h6>
               <div class="review-content d-flex">
                 <p class="my-2 me-2 fs-6 text-black-50">Lauren Asher</p>
 
@@ -386,128 +386,117 @@ require_once $_SERVER['DOCUMENT_ROOT'] . $baseUrl . "/view/layout/header.php";
 
 <!-- Category Section -->
 <section id="categories" class="padding-large pt-0">
-  <!-- <div class="your-element" data-aos="fade-in"> -->
-    <div class="container">
-      <div class="section-title overflow-hidden mb-4">
-        <h3 class="d-flex align-items-center">Categories</h3>
+  <div class="container">
+    <div class="section-title overflow-hidden mb-4">
+      <h3 class="d-flex align-items-center">Categories</h3>
+    </div>
+    <div class="row">
+      <!-- First Three Categories (Always Visible) -->
+      <div class="col-md-4">
+        <div class="card text-center mb-4 border-0 rounded-3 category-box">
+          <a href="index.html">
+            <img src="<?= $baseUrl ?>/assets/images/fiction.jpg" class="img-fluid rounded-3 category-image" alt="fiction">
+            <h6 class="position-absolute bottom-0 bg-primary m-4 py-2 px-3 rounded-3">
+              <a href="<?= $baseUrl ?>/view/pages/books.php" class="text-white">Fiction</a>
+            </h6>
+          </a>
+        </div>
       </div>
-      <div class="row">
-        <!-- First Three Categories (Always Visible) -->
-        <div class="col-md-4">
-          <div class="card text-center mb-4 border-0 rounded-3 category-box">
-            <a href="index.html">
-              <img src="<?= $baseUrl ?>/assets/images/fiction.jpg" class="img-fluid rounded-3 category-image" alt="fiction">
-              <h6 class="position-absolute bottom-0 bg-primary m-4 py-2 px-3 rounded-3">
-                <a href="<?= $baseUrl ?>/view/pages/books.php"" class="text-white">Fiction</a>
-              </h6>
-            </a>
-          </div>
+      <div class="col-md-4">
+        <div class="card text-center mb-4 border-0 rounded-3 category-box">
+          <a href="index.html">
+            <img src="<?= $baseUrl ?>/assets/images/horror.jpg" class="img-fluid rounded-3 category-image" alt="Horror">
+            <h6 class="position-absolute bottom-0 bg-primary m-4 py-2 px-3 rounded-3">
+              <a href="<?= $baseUrl ?>/view/pages/books.php" class="text-white">Horror</a>
+            </h6>
+          </a>
         </div>
-        <div class="col-md-4">
-          <div class="card text-center mb-4 border-0 rounded-3 category-box">
-            <a href="index.html">
-              <img src="<?= $baseUrl ?>/assets/images/horror.jpg" class="img-fluid rounded-3 category-image" alt="Horror">
-              <h6 class="position-absolute bottom-0 bg-primary m-4 py-2 px-3 rounded-3">
-                <a href="<?= $baseUrl ?>/view/pages/books.php"" class="text-white">Horror</a>
-              </h6>
-            </a>
-          </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card text-center mb-4 border-0 rounded-3 category-box">
+          <a href="index.html">
+            <img src="<?= $baseUrl ?>/assets/images/historical.jpg" class="img-fluid rounded-3 category-image" alt="Historical">
+            <h6 class="position-absolute bottom-0 bg-primary m-4 py-2 px-3 rounded-3">
+              <a href="<?= $baseUrl ?>/view/pages/books.php" class="text-white">Historical</a>
+            </h6>
+          </a>
         </div>
-        <div class="col-md-4">
-          <div class="card text-center mb-4 border-0 rounded-3 category-box">
-            <a href="index.html">
-              <img src="<?= $baseUrl ?>/assets/images/historical.jpg" class="img-fluid rounded-3 category-image" alt="Historical">
-              <h6 class="position-absolute bottom-0 bg-primary m-4 py-2 px-3 rounded-3">
-                <a href="<?= $baseUrl ?>/view/pages/books.php"" class="text-white">Historical</a>
-              </h6>
-            </a>
-          </div>
-        </div>
+      </div>
 
-        <!-- Hidden Categories -->
-        <div id="moreCategories" class="d-none">
-          <div class="row">
-            <div class="col-md-4">
-              <div class="card text-center mb-4 border-0 rounded-3 category-box">
-                <a href="index.html">
-                  <img src="<?= $baseUrl ?>/assets/images/science.jpg" class="img-fluid rounded-3 category-image" alt="Science Fiction">
-                  <h6 class="position-absolute bottom-0 bg-primary m-4 py-2 px-3 rounded-3">
-                    <a href="<?= $baseUrl ?>/view/pages/books.php"" class="text-white">Science Fiction</a>
-                  </h6>
-                </a>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="card text-center mb-4 border-0 rounded-3 category-box">
-                <a href="index.html">
-                  <img src="<?= $baseUrl ?>/assets/images/romance.jpg" class="img-fluid rounded-3 category-image" alt="Romance">
-                  <h6 class="position-absolute bottom-0 bg-primary m-4 py-2 px-3 rounded-3">
-                    <a href="<?= $baseUrl ?>/view/pages/books.php"" class="text-white">Romance</a>
-                  </h6>
-                </a>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="card text-center mb-4 border-0 rounded-3 category-box">
-                <a href="index.html">
-                  <img src="<?= $baseUrl ?>/assets/images/thriller.jpg" class="img-fluid rounded-3 category-image" alt="Thriller">
-                  <h6 class="position-absolute bottom-0 bg-primary m-4 py-2 px-3 rounded-3">
-                    <a href="<?= $baseUrl ?>/view/pages/books.php"" class="text-white">Thriller</a>
-                  </h6>
-                </a>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="card text-center mb-4 border-0 rounded-3 category-box">
-                <a href="index.html">
-                  <img src="<?= $baseUrl ?>/assets/images/young adult.jpg" class="img-fluid rounded-3 category-image" alt="Young Adult">
-                  <h6 class="position-absolute bottom-0 bg-primary m-4 py-2 px-3 rounded-3">
-                    <a href="<?= $baseUrl ?>/view/pages/books.php"" class="text-white">Young Adult</a>
-                  </h6>
-                </a>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="card text-center mb-4 border-0 rounded-3 category-box">
-                <a href="index.html">
-                  <img src="<?= $baseUrl ?>/assets/images/education.jpg" class="img-fluid rounded-3 category-image" alt="Education">
-                  <h6 class="position-absolute bottom-0 bg-primary m-4 py-2 px-3 rounded-3">
-                    <a href="<?= $baseUrl ?>/view/pages/books.php"" class="text-white">Education</a>
-                  </h6>
-                </a>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="card text-center mb-4 border-0 rounded-3 category-box">
-                <a href="index.html">
-                  <img src="<?= $baseUrl ?>/assets/images/autobiography.jpg" class="img-fluid rounded-3 category-image" alt="Autobiography">
-                  <h6 class="position-absolute bottom-0 bg-primary m-4 py-2 px-3 rounded-3">
-                    <a href="<?= $baseUrl ?>/view/pages/books.php"" class="text-white">Autobiography</a>
-                  </h6>
-                </a>
-              </div>
-            </div>
-            <!-- <div class="col-md-4">
+      <!-- Hidden Categories -->
+      <div id="moreCategories" class="d-none">
+        <div class="row">
+          <div class="col-md-4">
             <div class="card text-center mb-4 border-0 rounded-3 category-box">
               <a href="index.html">
-                <img src="<?= $baseUrl ?>/assets/images/selfhelp.jpg" class="img-fluid rounded-3 category-image" alt="Self Help">
+                <img src="<?= $baseUrl ?>/assets/images/science.jpg" class="img-fluid rounded-3 category-image" alt="Science Fiction">
                 <h6 class="position-absolute bottom-0 bg-primary m-4 py-2 px-3 rounded-3">
-                  <a href="index.html" class="text-white">Self Help</a>
+                  <a href="<?= $baseUrl ?>/view/pages/books.php" class="text-white">Science Fiction</a>
                 </h6>
               </a>
             </div>
-          </div> -->
+          </div>
+          <div class="col-md-4">
+            <div class="card text-center mb-4 border-0 rounded-3 category-box">
+              <a href="index.html">
+                <img src="<?= $baseUrl ?>/assets/images/romance.jpg" class="img-fluid rounded-3 category-image" alt="Romance">
+                <h6 class="position-absolute bottom-0 bg-primary m-4 py-2 px-3 rounded-3">
+                  <a href="<?= $baseUrl ?>/view/pages/books.php" class="text-white">Romance</a>
+                </h6>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card text-center mb-4 border-0 rounded-3 category-box">
+              <a href="index.html">
+                <img src="<?= $baseUrl ?>/assets/images/thriller.jpg" class="img-fluid rounded-3 category-image" alt="Thriller">
+                <h6 class="position-absolute bottom-0 bg-primary m-4 py-2 px-3 rounded-3">
+                  <a href="<?= $baseUrl ?>/view/pages/books.php" class="text-white">Thriller</a>
+                </h6>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card text-center mb-4 border-0 rounded-3 category-box">
+              <a href="index.html">
+                <img src="<?= $baseUrl ?>/assets/images/young adult.jpg" class="img-fluid rounded-3 category-image" alt="Young Adult">
+                <h6 class="position-absolute bottom-0 bg-primary m-4 py-2 px-3 rounded-3">
+                  <a href="<?= $baseUrl ?>/view/pages/books.php" class="text-white">Young Adult</a>
+                </h6>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card text-center mb-4 border-0 rounded-3 category-box">
+              <a href="index.html">
+                <img src="<?= $baseUrl ?>/assets/images/education.jpg" class="img-fluid rounded-3 category-image" alt="Education">
+                <h6 class="position-absolute bottom-0 bg-primary m-4 py-2 px-3 rounded-3">
+                  <a href="<?= $baseUrl ?>/view/pages/books.php" class="text-white">Education</a>
+                </h6>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card text-center mb-4 border-0 rounded-3 category-box">
+              <a href="index.html">
+                <img src="<?= $baseUrl ?>/assets/images/autobiography.jpg" class="img-fluid rounded-3 category-image" alt="Autobiography">
+                <h6 class="position-absolute bottom-0 bg-primary m-4 py-2 px-3 rounded-3">
+                  <a href="<?= $baseUrl ?>/view/pages/books.php" class="text-white">Autobiography</a>
+                </h6>
+              </a>
+            </div>
           </div>
         </div>
       </div>
+    </div>
 
-      <!-- See More Button -->
-      <div class="text-center mt-4">
+    <!-- See More Button -->
+    <div class="text-center mt-4">
       <button id="seeMoreBtn" class="btn btn-primary">See More</button>
-      </div>
     </div>
   </div>
 </section>
+
 <!--Category Section end-->
 
 <!-- Your categories section here -->

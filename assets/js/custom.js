@@ -1,4 +1,3 @@
-
 //fadein 
 document.addEventListener("DOMContentLoaded", function () {
   const cards = document.querySelectorAll('#subscription .card');
@@ -42,6 +41,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
+
 AOS.init();
 
 //for selecting books categories active button
@@ -81,8 +81,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 });
-
-//journal
 
 
 
