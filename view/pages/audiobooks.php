@@ -6,14 +6,13 @@ require_once $_SERVER['DOCUMENT_ROOT'] . $baseUrl . "/view/layout/header.php";
 <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
   <h1 class="text-primary">Audiobooks</h1>
 
-  <h5 class="mb-4">Tune In, Zone Out!: Life's noisy, <br> but your audiobook escape is just a click away.</h5>
+  <h5 class="mb-0">Tune In, Zone Out!: Life's noisy, <br> but your audiobook escape is just a click away.</h5>
 
-  <p class="mb-0"></p>
 </div>
 
 <div class="search-container">
   <input type="text" placeholder="Search Title" style="width: 300px;">
-  <select style="width: 200px;">
+  <!-- <select style="width: 200px;">
     <option>All Genre</option>
     <option>Fiction</option>
     <option>Horror</option>
@@ -24,7 +23,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . $baseUrl . "/view/layout/header.php";
     <option>Young Adult</option>
     <option>Education</option>
     <option>Autobiography</option>
-  </select>
+  </select> -->
 </div><br><br>
 
 <div class="container">
@@ -37,7 +36,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . $baseUrl . "/view/layout/header.php";
             <img src="<?= $baseUrl ?>/assets/images/tab-item1.jpg" alt="Audiobooks" class="audiobook-item">
           </figure>
           <figcaption>
-            <h5>Portrait Photography</h5>
+          <a href="<?= $baseUrl ?>/view/pages/audiobookPage.php"><h5>Portrait Photography</h5></a>
             <span>Narrated by Adam Silber</span>
             <div class="item-price">₹ 20.00</div>
             <audio controls>

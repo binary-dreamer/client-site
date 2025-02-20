@@ -1,6 +1,7 @@
 <?php
 $baseUrl = '/client-site';
-require_once $_SERVER['DOCUMENT_ROOT'] . $baseUrl . "/view/layout/header.php"; ?>
+require_once $_SERVER['DOCUMENT_ROOT'] . $baseUrl . "/view/layout/header.php";
+?>
 
 <section>
     <div class="back-button-container">
@@ -13,6 +14,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . $baseUrl . "/view/layout/header.php"; ?
 
 
 <section class="ebook-container">
+
     <div class="ebook-content">
         <div class="ebook-image-container">
             <img src="<?= $baseUrl ?>/assets/images/tab-item1.jpg" alt="The Notebook Cover" class="ebook-image">
@@ -48,9 +50,36 @@ require_once $_SERVER['DOCUMENT_ROOT'] . $baseUrl . "/view/layout/header.php"; ?
             <p class="description">
                 The Notebook by Nicholas Sparks is a heartwarming romance about Noah and Allie,
                 whose love endures despite time and obstacles. Set in coastal North Carolina, this timeless
-                tale of love, loss, and memory captivates readers.
+                tale of love, loss, and memory captivates Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae possimus atque sit voluptate in! Molestiae nostrum doloribus quod quidem eveniet fugiat praesentium illum minus beatae non doloremque ipsum, cum laudantium!
             </p>
-            <button class="download-btn">View<span class="pdf-tag">(pdf)</span></button>
+
+            <h3 class="audiobook-title">Audiobook Player</h3>
+            <audio id="audiobook-audio" controls>
+                <source id="audio-source" src="" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            <div class="chapters-container">
+                <div class="chapters-column">
+                  
+                    <ul class="chapter-list">
+                        <li data-audio-src="<?= $baseUrl ?>/assets/audiobooks/chapter1.mp3">Chapter 1: Introduction</li>
+                        <li data-audio-src="<?= $baseUrl ?>/assets/audiobooks/chapter2.mp3">Chapter 2: The Beginning</li>
+                        <li data-audio-src="<?= $baseUrl ?>/assets/audiobooks/chapter3.mp3">Chapter 3: The Journey</li>
+                        <li data-audio-src="<?= $baseUrl ?>/assets/audiobooks/chapter4.mp3">Chapter 4: The Conflict</li>
+                        <li data-audio-src="<?= $baseUrl ?>/assets/audiobooks/chapter5.mp3">Chapter 5: The Resolution</li>
+                    </ul>
+                </div>
+                <div class="chapters-column">
+                  
+                    <ul class="chapter-list">
+                        <li data-audio-src="<?= $baseUrl ?>/assets/audiobooks/chapter6.mp3">Chapter 6: The Aftermath</li>
+                        <li data-audio-src="<?= $baseUrl ?>/assets/audiobooks/chapter7.mp3">Chapter 7: Reflections</li>
+                        <li data-audio-src="<?= $baseUrl ?>/assets/audiobooks/chapter8.mp3">Chapter 8: The Future</li>
+                        <li data-audio-src="<?= $baseUrl ?>/assets/audiobooks/chapter9.mp3">Chapter 9: The Epilogue</li>
+                        <li data-audio-src="<?= $baseUrl ?>/assets/audiobooks/chapter10.mp3">Chapter 10: Conclusion</li>
+                    </ul>
+                </div>
+            </div>
 
             <div class="social mt-4">
                 <h5 class="mb-0 me-2">Share:</h5>
@@ -80,5 +109,29 @@ require_once $_SERVER['DOCUMENT_ROOT'] . $baseUrl . "/view/layout/header.php"; ?
         </div>
     </div>
 </section>
+
+<section class="audiobook-player mt-4">
+</section>
+
+<style>
+
+</style>
+
+<!-- <script>
+    const chapterLists = document.querySelectorAll('.chapter-list');
+    const audioSource = document.getElementById('audio-source');
+    const audiobookAudio = document.getElementById('audiobook-audio');
+
+    chapterLists.forEach(list => {
+        list.addEventListener('click', function(e) {
+            if (e.target.tagName === 'LI') {
+                const audioSrc = e.target.getAttribute('data-audio-src');
+                audioSource.src = audioSrc;
+                audiobookAudio.load();
+                audiobookAudio.play();
+            }
+        });
+    });
+</script> -->
 
 <?php require_once $_SERVER['DOCUMENT_ROOT'] . $baseUrl . "/view/layout/footer.php"; ?>
