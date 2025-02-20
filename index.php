@@ -499,6 +499,11 @@ require_once $_SERVER['DOCUMENT_ROOT'] . $baseUrl . "/view/layout/header.php";
 
 <!--Category Section end-->
 
+<!-- Your categories section here -->
+
+
+</body>
+
 
 <!--Audiobook Section-->
 <section id="audiobook-section">
