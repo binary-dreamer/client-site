@@ -2,17 +2,28 @@
 $baseUrl = '/client-site';
 require_once $_SERVER['DOCUMENT_ROOT'] . $baseUrl . "/view/layout/header.php"; ?>
 
-<section>
-    <div class="back-button-container">
-        <a href="javascript:history.back()" class="back-button">
-            <i class="fas fa-arrow-left"></i>
-            <span class="back-text"> Back</span>
-        </a>
-    </div>
-</section>
-
-
-<section class="ebook-container">
+<div class="containerPage">
+    <section>
+        <div class="back-button-container">
+            <div class="audioBPM">
+                <marquee class="marq" bgcolor="#F9F9F9" direction="left" scrollamount="8">
+                    <span class="audiosinglepage">Enjoy reading to your pdfs!!</span>
+                    <span class="audiosinglepage">Enjoy reading to your pdfs!!</span>
+                    <span class="audiosinglepage">Enjoy reading to your pdfs!!</span>
+                    <span class="audiosinglepage">Enjoy reading to your pdfs!!</span>
+                    <span class="audiosinglepage">Enjoy reading to your pdfs!!</span>
+                    <span class="audiosinglepage">Enjoy reading to your pdfs!!</span>
+                    <span class="audiosinglepage">Enjoy reading to your pdfs!!</span>
+                    <span class="audiosinglepage">Enjoy reading to your pdfs!!</span>
+                </marquee>
+            </div>
+            <a href="javascript:history.back()" class="back-button">
+                <i class="fas fa-arrow-left"></i>
+                <span class="back-text"> Back</span>
+            </a>
+        </div>
+    </section>
+    <section class="ebook-container">
     <div class="ebook-content">
         <div class="ebook-image-container">
             <img src="<?= $baseUrl ?>/assets/images/tab-item1.jpg" alt="The Notebook Cover" class="ebook-image">
@@ -48,7 +59,9 @@ require_once $_SERVER['DOCUMENT_ROOT'] . $baseUrl . "/view/layout/header.php"; ?
             <p class="description">
                 The Notebook by Nicholas Sparks is a heartwarming romance about Noah and Allie,
                 whose love endures despite time and obstacles. Set in coastal North Carolina, this timeless
-                tale of love, loss, and memory captivates readers.
+                tale of love, loss, and memory captivates Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quae ipsa quisquam tempora cupiditate, ex ea sapiente labore. Esse laborum atque aut perspiciatis deserunt ratione molestias sit, nobis fugit alias facilis. The Notebook by Nicholas Sparks is a heartwarming romance about Noah and Allie,
+                whose love endures despite time and obstacles. Set in coastal North Carolina, this timeless
+                tale of love, loss, and memory captivates Lorem ipsum dolor sit, amet consectetur adipisicing elit.
             </p>
             <button class="download-btn">View<span class="pdf-tag">(pdf)</span></button>
 
@@ -80,5 +93,6 @@ require_once $_SERVER['DOCUMENT_ROOT'] . $baseUrl . "/view/layout/header.php"; ?
         </div>
     </div>
 </section>
+</div>
 
 <?php require_once $_SERVER['DOCUMENT_ROOT'] . $baseUrl . "/view/layout/footer.php"; ?>

@@ -1275,27 +1275,50 @@ html {
 }
 
 /* single page */
+
+.audioBPM {
+  text-align: center;
+}
+
+.marq {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  white-space: nowrap;
+}
+
+.audiosinglepage {
+  font-size: 15px;
+  color: Teal;
+  padding-bottom: 10px;
+  display: inline;
+  margin-right: 50px; /* Adjust spacing between repetitions */
+}
+
+
 .back-button-container {
   position: relative;
-  margin-bottom: 20px;
+  
   z-index: 10;
   text-align: left;
-  margin-bottom: 20px;
+  
+  background-color: #F9F9F9;
 }
+
+
 
 .back-button {
   display: inline-flex;
   align-items: center;
   padding: 10px 15px;
   background-color: #20c997;
-  color: white;
+  color: rgb(255, 255, 255);
   border-radius: 5px;
   text-decoration: none;
   margin-left: 100px;
 }
 
 .back-button:hover {
-  background-color: #17a2b8;
+  background-color: #17b89b3b;
 }
 
 /* Ensure the ebook container has enough padding at the top */
