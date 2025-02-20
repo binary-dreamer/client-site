@@ -176,10 +176,6 @@ require_once $_SERVER['DOCUMENT_ROOT'] . $baseUrl . "/view/layout/header.php";
   </div>
 </div>
 
-<style>
 
-
-
-</style>
 
 <?php require_once $_SERVER['DOCUMENT_ROOT'] . $baseUrl . "/view/layout/footer.php"; ?>

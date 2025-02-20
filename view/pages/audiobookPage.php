@@ -3,18 +3,20 @@ $baseUrl = '/client-site';
 require_once $_SERVER['DOCUMENT_ROOT'] . $baseUrl . "/view/layout/header.php";
 ?>
 
-<section>
-    <div class="back-button-container">
-        <a href="javascript:history.back()" class="back-button">
-            <i class="fas fa-arrow-left"></i>
-            <span class="back-text"> Back</span>
-        </a>
-    </div>
-</section>
 
 
-<section class="ebook-container">
 
+
+<div class="containerPage">
+    <section>
+        <div class="back-button-container">
+            <a href="javascript:history.back()" class="back-button">
+                <i class="fas fa-arrow-left"></i>
+                <span class="back-text"> Back</span>
+            </a>
+        </div>
+    </section>
+    <section class="ebook-container">
     <div class="ebook-content">
         <div class="ebook-image-container">
             <img src="<?= $baseUrl ?>/assets/images/tab-item1.jpg" alt="The Notebook Cover" class="ebook-image">
@@ -60,7 +62,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . $baseUrl . "/view/layout/header.php";
             </audio>
             <div class="chapters-container">
                 <div class="chapters-column">
-                  
+
                     <ul class="chapter-list">
                         <li data-audio-src="<?= $baseUrl ?>/assets/audiobooks/chapter1.mp3">Chapter 1: Introduction</li>
                         <li data-audio-src="<?= $baseUrl ?>/assets/audiobooks/chapter2.mp3">Chapter 2: The Beginning</li>
@@ -70,7 +72,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . $baseUrl . "/view/layout/header.php";
                     </ul>
                 </div>
                 <div class="chapters-column">
-                  
+
                     <ul class="chapter-list">
                         <li data-audio-src="<?= $baseUrl ?>/assets/audiobooks/chapter6.mp3">Chapter 6: The Aftermath</li>
                         <li data-audio-src="<?= $baseUrl ?>/assets/audiobooks/chapter7.mp3">Chapter 7: Reflections</li>
@@ -109,13 +111,9 @@ require_once $_SERVER['DOCUMENT_ROOT'] . $baseUrl . "/view/layout/header.php";
         </div>
     </div>
 </section>
+</div>
 
-<section class="audiobook-player mt-4">
-</section>
 
-<style>
-
-</style>
 
 <!-- <script>
     const chapterLists = document.querySelectorAll('.chapter-list');

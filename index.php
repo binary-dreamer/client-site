@@ -394,7 +394,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . $baseUrl . "/view/layout/header.php";
       <!-- First Three Categories (Always Visible) -->
       <div class="col-md-4">
         <div class="card text-center mb-4 border-0 rounded-3 category-box">
-          <a href="index.html">
+          <a href="<?= $baseUrl ?>/view/pages/books.php">
             <img src="<?= $baseUrl ?>/assets/images/fiction.jpg" class="img-fluid rounded-3 category-image" alt="fiction">
             <h6 class="position-absolute bottom-0 bg-primary m-4 py-2 px-3 rounded-3">
               <a href="<?= $baseUrl ?>/view/pages/books.php" class="text-white">Fiction</a>
@@ -404,7 +404,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . $baseUrl . "/view/layout/header.php";
       </div>
       <div class="col-md-4">
         <div class="card text-center mb-4 border-0 rounded-3 category-box">
-          <a href="index.html">
+          <a href="<?= $baseUrl ?>/view/pages/books.php">
             <img src="<?= $baseUrl ?>/assets/images/horror.jpg" class="img-fluid rounded-3 category-image" alt="Horror">
             <h6 class="position-absolute bottom-0 bg-primary m-4 py-2 px-3 rounded-3">
               <a href="<?= $baseUrl ?>/view/pages/books.php" class="text-white">Horror</a>
@@ -414,7 +414,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . $baseUrl . "/view/layout/header.php";
       </div>
       <div class="col-md-4">
         <div class="card text-center mb-4 border-0 rounded-3 category-box">
-          <a href="index.html">
+          <a href="<?= $baseUrl ?>/view/pages/books.php">
             <img src="<?= $baseUrl ?>/assets/images/historical.jpg" class="img-fluid rounded-3 category-image" alt="Historical">
             <h6 class="position-absolute bottom-0 bg-primary m-4 py-2 px-3 rounded-3">
               <a href="<?= $baseUrl ?>/view/pages/books.php" class="text-white">Historical</a>
@@ -428,7 +428,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . $baseUrl . "/view/layout/header.php";
         <div class="row">
           <div class="col-md-4">
             <div class="card text-center mb-4 border-0 rounded-3 category-box">
-              <a href="index.html">
+              <a href="<?= $baseUrl ?>/view/pages/books.php">
                 <img src="<?= $baseUrl ?>/assets/images/science.jpg" class="img-fluid rounded-3 category-image" alt="Science Fiction">
                 <h6 class="position-absolute bottom-0 bg-primary m-4 py-2 px-3 rounded-3">
                   <a href="<?= $baseUrl ?>/view/pages/books.php" class="text-white">Science Fiction</a>
@@ -438,7 +438,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . $baseUrl . "/view/layout/header.php";
           </div>
           <div class="col-md-4">
             <div class="card text-center mb-4 border-0 rounded-3 category-box">
-              <a href="index.html">
+              <a href="<?= $baseUrl ?>/view/pages/books.php">
                 <img src="<?= $baseUrl ?>/assets/images/romance.jpg" class="img-fluid rounded-3 category-image" alt="Romance">
                 <h6 class="position-absolute bottom-0 bg-primary m-4 py-2 px-3 rounded-3">
                   <a href="<?= $baseUrl ?>/view/pages/books.php" class="text-white">Romance</a>
@@ -448,7 +448,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . $baseUrl . "/view/layout/header.php";
           </div>
           <div class="col-md-4">
             <div class="card text-center mb-4 border-0 rounded-3 category-box">
-              <a href="index.html">
+              <a href="<?= $baseUrl ?>/view/pages/books.php">
                 <img src="<?= $baseUrl ?>/assets/images/thriller.jpg" class="img-fluid rounded-3 category-image" alt="Thriller">
                 <h6 class="position-absolute bottom-0 bg-primary m-4 py-2 px-3 rounded-3">
                   <a href="<?= $baseUrl ?>/view/pages/books.php" class="text-white">Thriller</a>
@@ -458,7 +458,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . $baseUrl . "/view/layout/header.php";
           </div>
           <div class="col-md-4">
             <div class="card text-center mb-4 border-0 rounded-3 category-box">
-              <a href="index.html">
+              <a href="<?= $baseUrl ?>/view/pages/books.php">
                 <img src="<?= $baseUrl ?>/assets/images/young adult.jpg" class="img-fluid rounded-3 category-image" alt="Young Adult">
                 <h6 class="position-absolute bottom-0 bg-primary m-4 py-2 px-3 rounded-3">
                   <a href="<?= $baseUrl ?>/view/pages/books.php" class="text-white">Young Adult</a>
@@ -468,7 +468,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . $baseUrl . "/view/layout/header.php";
           </div>
           <div class="col-md-4">
             <div class="card text-center mb-4 border-0 rounded-3 category-box">
-              <a href="index.html">
+              <a href="<?= $baseUrl ?>/view/pages/books.php">
                 <img src="<?= $baseUrl ?>/assets/images/education.jpg" class="img-fluid rounded-3 category-image" alt="Education">
                 <h6 class="position-absolute bottom-0 bg-primary m-4 py-2 px-3 rounded-3">
                   <a href="<?= $baseUrl ?>/view/pages/books.php" class="text-white">Education</a>
@@ -478,7 +478,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . $baseUrl . "/view/layout/header.php";
           </div>
           <div class="col-md-4">
             <div class="card text-center mb-4 border-0 rounded-3 category-box">
-              <a href="index.html">
+              <a href="<?= $baseUrl ?>/view/pages/books.php">
                 <img src="<?= $baseUrl ?>/assets/images/autobiography.jpg" class="img-fluid rounded-3 category-image" alt="Autobiography">
                 <h6 class="position-absolute bottom-0 bg-primary m-4 py-2 px-3 rounded-3">
                   <a href="<?= $baseUrl ?>/view/pages/books.php" class="text-white">Autobiography</a>

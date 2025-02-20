@@ -1280,6 +1280,7 @@ html {
   margin-bottom: 20px;
   z-index: 10;
   text-align: left;
+  margin-bottom: 20px;
 }
 
 .back-button {
@@ -1310,6 +1311,7 @@ html {
   position: relative;
   padding-top: 10px;
   padding-left: 15px;
+  grid-row: 2;
 }
 
 /* Ensure content does not overlap with the button */
@@ -1324,6 +1326,11 @@ html {
   gap: 30px;
   position: relative;
   z-index: 1;
+}
+
+.containerPage {
+  display: grid;
+  grid-template-rows: auto 1fr;
 }
 
 .ebook-image-container {
@@ -1689,6 +1696,7 @@ html {
   background-color: #e0e0e0;
 }
 
+/* category see more/less */
 .d-none {
   display: none;
 }
