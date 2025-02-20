@@ -143,20 +143,8 @@ require_once $_SERVER['DOCUMENT_ROOT'] . $baseUrl . "/controller/audioFetch.php"
       </div>
 
 
-                <!-- <p>Audio Path: <?= $baseUrl ?>/assets/audio/<?= htmlspecialchars($audiobook['audio_file']); ?></p>  -->
                 
-                <audio controls style="width: 100%;">
-                  <source src="<?= $baseUrl ?>/assets/audio/<?= htmlspecialchars($audiobook['audio_file']); ?>" 
-                          type="audio/mp3/media">
-                  Your browser does not support the audio element.
-                </audio>
-              </figcaption>
-            </div>
-          </div>
-        <?php endforeach; ?>
-      <?php else: ?>
-        <p class="text-center">No audiobooks available.</p>
-      <?php endif; ?>
+     
     </div>
   </div>
 </div>
