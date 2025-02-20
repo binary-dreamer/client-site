@@ -60,6 +60,19 @@ $userProfileImage = $_SESSION['user_profile_image'] ?? 'assets/images/default-av
       }
     }
   </script>
+  <!-- <div id="google_translate_element"></div>
+
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: 'en'
+      }, 'google_translate_element');
+    }
+  </script>
+
+  <script type="text/javascript"
+    src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
+  </script> -->
 
   <!-- Favicon -->
   <link rel="icon" href="<?= $baseUrl ?>/assets/images/monogram.png" type="image/x-icon">
@@ -253,23 +266,44 @@ $userProfileImage = $_SESSION['user_profile_image'] ?? 'assets/images/default-av
               <a class=" p-0 text-black me-3" href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
               <a class=" p-0 text-black me-0" href="https://www.youtube.com/"><i class="fab fa-youtube"></i></a>
             </div>
-            <div class="dropdown ms-3">
-              <a href="#" class="dropdown-toggle text-black" data-bs-toggle="dropdown">
-                <small><i class="fas fa-globe-europe text-primary me-2"></i> English</small>
-              </a>
-              <div class="dropdown-menu rounded">
-                <a href="#" class="dropdown-item text-black">English</a>
-                <a href="#" class="dropdown-item text-black">Bangla</a>
-                <a href="#" class="dropdown-item text-black">French</a>
-                <a href="#" class="dropdown-item text-black">Spanish</a>
-                <a href="#" class="dropdown-item text-black">Arabic</a>
-              </div>
+
+
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
+  <script type="text/javascript">
+    // Initialize Google Translate with language parameter
+    // function googleTranslateElementInit() {
+    //     new google.translate.TranslateElement({
+    //         pageLanguage: 'en',  // Default page language
+    //         includedLanguages: 'en,hi,gu,bn,bhojpuri,nl,fr,de,it,kn,kok,ko,mr,mai,ml,mwr,ne,pa,sa,es,ta,te,tulu,ur',  // Available languages
+    //         layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+    //     }, 'google_translate_element');
+    // }
+    
+    
+    // Function to change the language in Google Translate
+    // function changeLanguage(language) {
+    //     // Set the language in the Google Translate dropdown
+    //     var translate = new google.translate.TranslateElement({
+    //         pageLanguage: 'en', // Default page language (English)
+    //         includedLanguages: 'en,hi,gu,bn,bhojpuri,nl,fr,de,it,kn,kok,ko,mr,mai,ml,mwr,ne,pa,sa,es,ta,te,tulu,ur', // Add your language codes here
+    //         layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+    //     }, 'google_translate_element');
+
+    //     // Trigger language change in Google Translate widget
+    //     translate.translatePage(language, 'en');
+    // }
+</script>
+
+<script type="text/javascript" 
+    src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
+</script>
+  <!-- Google Translate Element -->
+
 
   <!-- Topbar End -->
 
