@@ -31,7 +31,6 @@ $book_id = isset($_GET['id']) ? intval($_GET['id']) : 0;
                 <iframe id="pdfViewer" class="w-100 h-100" style="border: none;"></iframe>
                 <div class="pdf-overlay"></div> <!-- Overlay blocks right-click but allows scrolling -->
             </div>
-
         </div>
     </div>
 </div>

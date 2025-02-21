@@ -2,7 +2,7 @@
 $baseUrl = '/client-site';
 ?>
 
-<footer id="footer" class="padding-large">
+<footer id="footer" class="padding-small">
   <div class="container">
     <div class="row">
       <div class="footer-top-area">
@@ -147,7 +147,7 @@ $baseUrl = '/client-site';
 <!-- Your script.js -->
 <script src="<?= $baseUrl ?>/assets/js/script.js"></script>
 
-<script type="text/javascript" src="<?= $baseUrl ?>/assets/js/custom.js" defer></script>
+<script type="text/javascript" src="<?= $baseUrl ?>/assets/js/custom.js"></script>
 </body>
 
 </html>

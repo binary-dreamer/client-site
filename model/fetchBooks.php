@@ -26,6 +26,7 @@ if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
         $output .= '
         <div class="col-lg-3 col-md-4 col-sm-6 d-flex mt-4">
+
             <div class="card position-relative p-3 border rounded-3 w-100">
                 <img src="/NovelNest/assets/images/book-cover/' . htmlspecialchars($row['cover_image']) . '" 
                      class="img-fluid shadow-sm" alt="' . htmlspecialchars($row['title']) . '">
@@ -34,6 +35,7 @@ if ($result->num_rows > 0) {
                         ' . htmlspecialchars($row['title']) . '
                     </a>
                 </h6>
+
                 <p class="my-2 fs-6 text-black-50">' . htmlspecialchars($row['author']) . '</p>
             </div>
         </div>';

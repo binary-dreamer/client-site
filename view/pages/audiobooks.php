@@ -1,19 +1,21 @@
 <?php
 $baseUrl = '/client-site';
 require_once $_SERVER['DOCUMENT_ROOT'] . $baseUrl . "/view/layout/header.php";
+require_once $_SERVER['DOCUMENT_ROOT'] . $baseUrl . "/controller/audioFetch.php"; // Include the controller
 ?>
 
 <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
   <h1 class="text-primary">Audiobooks</h1>
 
-  <h5 class="mb-4">Tune In, Zone Out!: Life's noisy, <br> but your audiobook escape is just a click away.</h5>
 
-  <p class="mb-0"></p>
+  <h5 class="mb-0">Tune In, Zone Out!: Life's noisy, <br> but your audiobook escape is just a click away.</h5>
+
+
 </div>
 
 <div class="search-container">
   <input type="text" placeholder="Search Title" style="width: 300px;">
-  <select style="width: 200px;">
+  <!-- <select style="width: 200px;">
     <option>All Genre</option>
     <option>Fiction</option>
     <option>Horror</option>
@@ -24,12 +26,14 @@ require_once $_SERVER['DOCUMENT_ROOT'] . $baseUrl . "/view/layout/header.php";
     <option>Young Adult</option>
     <option>Education</option>
     <option>Autobiography</option>
-  </select>
+  </select> -->
 </div><br><br>
 
 <div class="container">
+<div class="container">
   <div class="audiobooks-container">
     <div class="row">
+
       <!-- Audiobook 1 -->
       <div class="col-md-3">
         <div class="audiobook-item">
@@ -37,7 +41,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . $baseUrl . "/view/layout/header.php";
             <img src="<?= $baseUrl ?>/assets/images/tab-item1.jpg" alt="Audiobooks" class="audiobook-item">
           </figure>
           <figcaption>
-            <h5>Portrait Photography</h5>
+          <a href="<?= $baseUrl ?>/view/pages/audiobookPage.php"><h5>Portrait Photography</h5></a>
             <span>Narrated by Adam Silber</span>
             <div class="item-price">₹ 20.00</div>
             <audio controls>
@@ -138,49 +142,13 @@ require_once $_SERVER['DOCUMENT_ROOT'] . $baseUrl . "/view/layout/header.php";
         </div>
       </div>
 
-      <!-- Audiobook 7 -->
-      <div class="col-md-3">
-        <div class="audiobook-item">
-          <figure class="audiobook-style">
-            <img src="<?= $baseUrl ?>/assets/images/tab-item7.jpg" alt="Audiobooks" class="audiobook-item">
-          </figure>
-          <figcaption>
-            <h5>Life Among the Pirates</h5>
-            <span>Narrated by Armor Ramsey</span>
-            <div class="item-price">₹ 20.00</div>
-            <audio controls>
-              <source src="path-to-audio-file7.mp3" type="audio/mpeg">
-              Your browser does not support the audio element.
-            </audio>
-          </figcaption>
-        </div>
-      </div>
 
-      <!-- Audiobook 8 -->
-      <div class="col-md-3">
-        <div class="audiobook-item">
-          <figure class="audiobook-style">
-            <img src="<?= $baseUrl ?>/assets/images/tab-item8.jpg" alt="Audiobooks" class="audiobook-item">
-          </figure>
-          <figcaption>
-            <h5> Peace Life</h5>
-            <span>Narrated by Armor Ramsey</span>
-            <div class="item-price">₹ 20.00</div>
-            <audio controls>
-              <source src="path-to-audio-file8.mp3" type="audio/mpeg">
-              Your browser does not support the audio element.
-            </audio>
-          </figcaption>
-        </div>
-      </div>
+                
+     
     </div>
   </div>
 </div>
 
-<style>
 
-
-
-</style>
 
 <?php require_once $_SERVER['DOCUMENT_ROOT'] . $baseUrl . "/view/layout/footer.php"; ?>
