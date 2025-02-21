@@ -61,6 +61,8 @@ $userProfileImage = $_SESSION['user_profile_image'] ?? 'assets/images/default-av
     }
   </script>
 
+  
+
   <!-- Favicon -->
   <link rel="icon" href="<?= $baseUrl ?>/assets/images/monogram.png" type="image/x-icon">
 
@@ -68,6 +70,9 @@ $userProfileImage = $_SESSION['user_profile_image'] ?? 'assets/images/default-av
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <!-- Bootstrap Icons -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+  <!-- Bootstrap 5 CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  
 
 
   <link rel="stylesheet" type="text/css" href="<?= $baseUrl ?>/assets/css/style.css">

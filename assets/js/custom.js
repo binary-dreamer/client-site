@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
   let moreCategories = document.getElementById("moreCategories");
 
   if (!seeMoreBtn || !moreCategories) {
-    console.error("Button or moreCategories section not found!");
+    // console.error("Button or moreCategories section not found!");
     return;
   }
 

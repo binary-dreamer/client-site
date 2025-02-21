@@ -2191,3 +2191,72 @@ html {
   align-items: stretch;
 }
 
+
+/* pdf button and frame */
+
+.modal-dialog {
+  max-width: 100vw !important;  /* Force full screen width */
+  margin: 0;  /* Remove margins */
+}
+
+.modal-content {
+  height: 100vh;  /* Full height */
+  border: none;  /* Remove any border */
+}
+
+.modal-body {
+  padding: 0 !important;  /* Remove padding */
+  margin: 0 !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body.modal-open {
+  overflow: hidden;
+}
+
+.modal-content {
+  height: 100vh;
+}
+
+.modal-body {
+  height: calc(100% - 56px); /* Adjust based on the height of the modal header */
+}
+
+
+#pdfViewer {
+  width: 100vw !important;  /* Full width */
+  height: 100vh !important; /* Full height */
+}
+
+.pdf-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  z-index: 10;
+  pointer-events: none; /* Allows scrolling while still blocking right-click */
+}
+
+
+
+
+.view-pdf-btn {
+  background-color: #20C997;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.view-pdf-btn:hover {
+  background-color: #f1f8f6;
+  color: #20C997;
+
+}
