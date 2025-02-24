@@ -1,98 +1,96 @@
 <?php
 $baseUrl = '/client-site';
-require_once $_SERVER['DOCUMENT_ROOT'] . $baseUrl . "/view/layout/header.php"; ?>
+require_once $_SERVER['DOCUMENT_ROOT'] . $baseUrl . "/view/layout/header.php";
 
-<div class="containerPage">
-    <section>
-        <div class="back-button-container">
-            <div class="audioBPM">
-                <marquee class="marq" bgcolor="#F9F9F9" direction="left" scrollamount="8">
-                    <span class="audiosinglepage">Enjoy reading to your pdfs!!</span>
-                    <span class="audiosinglepage">Enjoy reading to your pdfs!!</span>
-                    <span class="audiosinglepage">Enjoy reading to your pdfs!!</span>
-                    <span class="audiosinglepage">Enjoy reading to your pdfs!!</span>
-                    <span class="audiosinglepage">Enjoy reading to your pdfs!!</span>
-                    <span class="audiosinglepage">Enjoy reading to your pdfs!!</span>
-                    <span class="audiosinglepage">Enjoy reading to your pdfs!!</span>
-                    <span class="audiosinglepage">Enjoy reading to your pdfs!!</span>
-                </marquee>
+// Get book ID from URL
+$book_id = isset($_GET['id']) ? intval($_GET['id']) : 0;
+?>
+
+<section class="ebook-container">
+    <div class="back-button-container">
+        <a href="javascript:history.back()" class="back-button">
+            <i class="fas fa-arrow-left"></i>
+        </a>
+        <span class="back-text">Back</span>
+    </div>
+
+    <div id="book-details">
+        <p class="text-center">Loading book details...</p>
+    </div>
+</section>
+
+<!-- Fullscreen PDF Viewer Modal -->
+<div class="modal fade" id="pdfModal" tabindex="-1" aria-labelledby="pdfModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-fullscreen">
+        <div class="modal-content h-100">
+            <div class="modal-header">
+                <h5 class="modal-title" style="margin-bottom: 25px;">PDF Viewer</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <a href="javascript:history.back()" class="back-button">
-                <i class="fas fa-arrow-left"></i>
-                <span class="back-text"> Back</span>
-            </a>
-        </div>
-    </section>
-    <section class="ebook-container">
-    <div class="ebook-content">
-        <div class="ebook-image-container">
-            <img src="<?= $baseUrl ?>/assets/images/tab-item1.jpg" alt="The Notebook Cover" class="ebook-image">
-        </div>
-        <div class="ebook-details">
-            <h2 class="ebook-title">The Notebook</h2>
-            <p class="author"><i class="fas fa-book"></i> <strong>NICHOLAS SPARKS</strong></p>
-            <div class="ebook-meta">
-                <span class="pages"><i class="fas fa-file-alt"></i> 174 Pages</span>
-                <span class="language"><i class="fas fa-globe"></i> Language: English</span>
-            </div>
-            <span class="ebook-category">Romantic</span>
-
-            <a href="#" class="wishlist-btn">
-                <span class="wishlist-icon">
-                    <i class="fas fa-heart"></i>
-                </span>
-                <span>Add to Wishlist</span>
-            </a>
-
-            <div class="rating-container mt-4">
-                <span class="rating-text">Rating: </span>
-                <div class="star-rating">
-                    <span class="star" data-value="1">☆</span>
-                    <span class="star" data-value="2">☆</span>
-                    <span class="star" data-value="3">☆</span>
-                    <span class="star" data-value="4">☆</span>
-                    <span class="star" data-value="5">☆</span>
-                </div>
-                <div class="rating-value" id="rating-value">0</div>
-            </div>
-
-            <p class="description">
-                The Notebook by Nicholas Sparks is a heartwarming romance about Noah and Allie,
-                whose love endures despite time and obstacles. Set in coastal North Carolina, this timeless
-                tale of love, loss, and memory captivates Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quae ipsa quisquam tempora cupiditate, ex ea sapiente labore. Esse laborum atque aut perspiciatis deserunt ratione molestias sit, nobis fugit alias facilis. The Notebook by Nicholas Sparks is a heartwarming romance about Noah and Allie,
-                whose love endures despite time and obstacles. Set in coastal North Carolina, this timeless
-                tale of love, loss, and memory captivates Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-            </p>
-            <button class="download-btn">View<span class="pdf-tag">(pdf)</span></button>
-
-            <div class="social mt-4">
-                <h5 class="mb-0 me-2">Share:</h5>
-                <ul class="list-inline d-flex gap-3 p-0 mb-0 social-icons">
-                    <li>
-                        <a href="https://www.facebook.com/" class="social-icon facebook">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://x.com/?mx=2" class="social-icon twitter">
-                            <i class="fa-brands fa-x-twitter"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://www.youtube.com/" class="social-icon youtube">
-                            <i class="fab fa-youtube"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://in.pinterest.com/" class="social-icon pinterest">
-                            <i class="fab fa-pinterest-p"></i>
-                        </a>
-                    </li>
-                </ul>
+            <div class="modal-body p-0 m-0 h-100" style="position: relative;">
+                <iframe id="pdfViewer" class="w-100 h-100" style="border: none;"></iframe>
+                <div class="pdf-overlay"></div> <!-- Overlay blocks right-click but allows scrolling -->
             </div>
         </div>
     </div>
-</section>
 </div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+   $(document).ready(function() {
+    const baseUrl = '/client-site';
+    const bookId = <?= $book_id ?>;
+
+    function loadBookDetails() {
+        $.ajax({
+            url: `${baseUrl}/model/fetchBookDetails.php`,
+            type: "POST",
+            data: { book_id: bookId },
+            beforeSend: function() {
+                $("#book-details").html('<p class="text-center">Fetching book details...</p>');
+            },
+            success: function(response) {
+                $("#book-details").html(response);
+            },
+            error: function() {
+                $("#book-details").html('<p class="text-center">Error loading book details.</p>');
+            }
+        });
+    }
+
+    // Handle click on "View PDF" button
+    $(document).on('click', '.view-pdf-btn', function() {
+        var pdfUrl = $(this).attr("data-pdf");
+        $("#pdfViewer").attr("src", pdfUrl);
+        $('#pdfModal').modal('show');
+
+        // Once the iframe loads, disable right-click inside it
+        $("#pdfViewer").on("load", function() {
+            disableRightClickInsideIframe();
+        });
+    });
+
+    function disableRightClickInsideIframe() {
+        var iframe = document.getElementById("pdfViewer");
+        if (iframe) {
+            iframe.onload = function() {
+                var iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+                iframeDoc.addEventListener('contextmenu', function(event) {
+                    event.preventDefault();
+                });
+            };
+        }
+    }
+
+    loadBookDetails();
+
+    // Disable right-click on the modal background but allow scrolling
+    $("#pdfModal").on("contextmenu", function(event) {
+        event.preventDefault();
+    });
+});
+
+
+</script>
 
 <?php require_once $_SERVER['DOCUMENT_ROOT'] . $baseUrl . "/view/layout/footer.php"; ?>
