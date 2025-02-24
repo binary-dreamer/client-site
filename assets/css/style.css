@@ -1141,100 +1141,7 @@ select {
 }
 
 /* subscription */
-#subscription {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  padding: 20px;
-  border-radius: 10px;
-  background-image: url('../images/post-item8.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  position: relative;
-  min-height: 100vh;
-  transform-style: preserve-3d;
-  perspective: 1000px;
-}
 
-/* Add an overlay to ensure text remains readable */
-#subscription::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(255, 255, 255, 0);
-  border-radius: 10px;
-  transform: translateZ(-1px) scale(2);
-}
-
-/* Style for the button to fix it in place */
-#subscription .card .btn {
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: calc(100% - 40px);
-  max-width: 300px;
-}
-
-/* Ensure content appears above the overlay */
-#subscription .container {
-  position: relative;
-  z-index: 1;
-  transform: translateZ(0);
-}
-
-/* Add smooth scrolling to the whole page for better parallax effect */
-html {
-  scroll-behavior: smooth;
-}
-
-/* Optional: Add animation for cards on scroll */
-#subscription .card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  transform: translateY(50px);
-  opacity: 0;
-}
-
-#subscription .card.visible {
-  transform: translateY(0);
-  opacity: 1;
-}
-
-/* Add media query for devices that prefer reduced motion */
-@media (prefers-reduced-motion: reduce) {
-  #subscription {
-    background-attachment: scroll;
-  }
-
-  html {
-    scroll-behavior: auto;
-  }
-}
-
-/* Style for each card */
-#subscription .card {
-  flex: 1 1 300px;
-  margin: 15px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
-  background: rgba(255, 255, 255, 0.9);
-}
-
-/* Animation on hover */
-#subscription .card:hover {
-  transform: translateY(-5px) scale(1.02);
-}
-
-.text-teal {
-  color: #008080;
-}
 
 .hidden-category {
   display: none;
@@ -1723,3 +1630,133 @@ html {
 .d-none {
   display: none;
 }
+
+/* subscription page */
+
+#subscription {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: rgba(63, 213, 205, 0.57);
+  /* Softer blue for better aesthetics */
+  position: relative;
+  min-height: 100vh;
+}
+
+#subscription .container {
+  position: relative;
+  z-index: 1;
+}
+
+#subscription .card {
+  flex: 1 1 480px;
+  /* Slightly wider cards */
+  margin: 15px;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+  background: rgba(255, 255, 255, 0.95);
+  /* Lighter background for better contrast */
+  background-image: url('../images/card_bg.jpg');
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 280px;
+  /* Reduced height as requested */
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+#subscription .card:hover {
+  transform: translateY(-5px) scale(1.03);
+}
+
+#subscription .card .sbbtn {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 8px;
+  background-color: #00796b;
+  /* Darker teal for better contrast */
+  border-color: #00796b;
+  color: white;
+  margin-top: auto;
+}
+
+#subscription .card.yearly {
+  background-color: rgba(255, 255, 255, 0.95);
+  border: 2px solid #00796b;
+}
+
+#subscription .card.yearly .sticker {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #ff7043;
+  /* Brighter sticker for emphasis */
+  color: white;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.text-teal {
+  color: #00796b;
+}
+
+#subscription .card .card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+#subscription .card .card-body .content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+#subscription .card .card-body .price {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+#subscription .card .card-body .price .amount {
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: #00796b;
+}
+
+#subscription .card .card-body .price .duration {
+  font-size: 1rem;
+  margin-left: 5px;
+  color: #555;
+}
+
+#subscription .card .card-body ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+#subscription .card .card-body ul li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 6px;
+  font-size: 14px;
+}
+
+#subscription .card .card-body ul li i {
+  margin-right: 8px;
+  color: #00796b;
+}
+
+

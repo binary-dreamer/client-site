@@ -17,13 +17,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
 //category see more/less
 document.addEventListener("DOMContentLoaded", function () {
-  console.log("Script loaded and running!");
+  // console.log("Script loaded and running!");
 
   let seeMoreBtn = document.getElementById("seeMoreBtn");
   let moreCategories = document.getElementById("moreCategories");
 
   if (!seeMoreBtn || !moreCategories) {
-    console.error("Button or moreCategories section not found!");
+    // console.error("Button or moreCategories section not found!");
     return;
   }
 
