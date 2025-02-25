@@ -64,19 +64,19 @@ class BookClass
 
     // Fetch a single book by ID
     public function getBookById($bookId)
-{
-    $query = "SELECT books.*, genre.name AS genre_name 
+    {
+        $query = "SELECT books.*, genre.name AS genre_name 
               FROM books 
               JOIN genre ON books.genre_id = genre.id 
               WHERE books.id = ?";
-              
-    $stmt = $this->conn->prepare($query);
-    $stmt->bind_param("i", $bookId);
-    $stmt->execute();
-    $result = $stmt->get_result();
 
-    return $result->num_rows > 0 ? $result->fetch_assoc() : null;
-}
+        $stmt = $this->conn->prepare($query);
+        $stmt->bind_param("i", $bookId);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        return $result->num_rows > 0 ? $result->fetch_assoc() : null;
+    }
 
 
 
@@ -104,11 +104,27 @@ class BookClass
         return $result->num_rows > 0 ? $result->fetch_assoc() : null;
     }
 
-    // Helper function to get book cover image
+    //function to get book cover image
     private function getCoverImage($image)
     {
         return !empty($image)
             ? "/NovelNest/assets/images/book-cover/" . htmlspecialchars($image)
             : "/NovelNest/assets/images/book-cover/default.jpg";
+    }
+
+    // Fetch Harry Potter books
+    public function getHarryPotterBooks()
+    {
+        $query = "SELECT * FROM books WHERE title LIKE '%Harry Potter%'";
+        $stmt = $this->conn->prepare($query);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        $books = [];
+        while ($row = $result->fetch_assoc()) {
+            $row['cover_image'] = $this->getCoverImage($row['cover_image']);
+            $books[] = $row;
+        }
+        return $books;
     }
 }

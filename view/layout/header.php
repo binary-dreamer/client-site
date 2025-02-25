@@ -317,7 +317,7 @@ $userProfileImage = $_SESSION['user_profile_image'] ?? 'assets/images/default-av
 
     <nav id="header-nav" class="navbar navbar-expand-lg py-3">
       <div class="container">
-        <a class="navbar-brand" href="index.html">
+        <a class="navbar-brand" href="<?= $baseUrl ?>/index.php">
           <img src="<?= $baseUrl ?>/assets/images/logo.png" class="logo" style="max-width: 200px; height: auto; display: block;">
         </a>
         <button class="navbar-toggler d-flex d-lg-none order-3 p-2" type="button" data-bs-toggle="offcanvas"
