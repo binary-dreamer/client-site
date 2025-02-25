@@ -1,6 +1,6 @@
 <?php
 $baseUrl = '/client-site';
-require_once $_SERVER['DOCUMENT_ROOT'] . $baseUrl . '/model/BooksClass.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . $baseUrl . '/model/BookClass.php';
 
 header('Content-Type: application/json');
 header("Access-Control-Allow-Origin: *");
@@ -52,12 +52,25 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         exit;
     }
 
+    if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['harry_potter'])) {
+        $books = $BooksClass->getHarryPotterBooks();
+        if (!empty($books)) {
+            echo json_encode(["status" => "success", "data" => $books]);
+        } else {
+            echo json_encode(["status" => "error", "message" => "No Harry Potter books found."]);
+        }
+        exit;
+    }
+
+
+
     // Fetch all books (Default case)
-    $books = $BooksClass->getAllBooks();
-    if (!empty($books)) {
-        echo json_encode(["status" => "success", "data" => $books]);
-    } else {
-        echo json_encode(["status" => "error", "message" => "No books found."]);
+    if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['all_books'])) {
+        $books = $BooksClass->getAllBooks();
+        if (!empty($books)) {
+            echo json_encode(["status" => "success", "data" => $books]);
+        } else {
+            echo json_encode(["status" => "error", "message" => "No books found."]);
+        }
     }
 }
-

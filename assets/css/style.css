@@ -774,11 +774,11 @@ th {
 /* 4.2 Billboard
 /*----------------------------------------------*/
 /*------------Swiper Arrow -----------*/
-.swiper-next,
+/* .swiper-next,
 .swiper-prev {
   color: var(--black-color);
   z-index: 9999;
-}
+} */
 
 .swiper-button-disabled {
   color: var(--gray-color-500);
@@ -1742,6 +1742,7 @@ select {
   color: #555;
 }
 
+
 #subscription .card .card-body ul {
   padding: 0;
   margin: 0;
@@ -1755,9 +1756,65 @@ select {
   font-size: 14px;
 }
 
+.view-flipbook-btn {
+  background-color: #20C997;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  display: inline-block;
+  margin-top: 10px;
+}
+
+
+/* flipbook css */
+.view-flipbook-btn:hover {
+  background-color: #f1f8f6;
+  color: #20C997;
+
 #subscription .card .card-body ul li i {
   margin-right: 8px;
   color: #00796b;
 }
 
+
+#flipbook-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+  background: #f8f9fa;
+}
+
+#flipbook {
+  width: 70%;
+  height: 100%;
+}
+
+.flipbook-page {
+  width: 100%;
+  height: auto;
+}
+
+/* swiper button  */
+/* Custom styles for Swiper navigation buttons */
+.swiper-button-next,
+.swiper-button-prev {
+  top: 50%; /* Vertically center the buttons */
+  transform: translateY(-50%); /* Adjust for vertical centering */
+  width: 40px; /* Adjust width as needed */
+  height: 40px; /* Adjust height as needed */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.swiper-button-next {
+  right: 100px; /* Adjust distance from the right */
+}
+
+.swiper-button-prev {
+  left: 10px; /* Adjust distance from the left */
+}
 

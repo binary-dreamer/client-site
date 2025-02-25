@@ -17,7 +17,6 @@ if ($controller === 'Checkout' && $action === 'createSession') {
 
 require_once $_SERVER['DOCUMENT_ROOT'] . $baseUrl . "/view/layout/header.php";
 
-
 ?>
 
 <!-- BillBoard Section -->
@@ -26,7 +25,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . $baseUrl . "/view/layout/header.php";
 
   <div class="container">
     <div class="row d-flex flex-column-reverse flex-md-row align-items-center">
-      
+
       <!-- Text Content -->
       <div class="col-md-6 text-center text-md-start mt-4 mt-md-0">
         <div class="banner-content">
@@ -43,7 +42,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . $baseUrl . "/view/layout/header.php";
           <img src="<?= $baseUrl ?>/assets/images/bb2.png" class="img-fluid" alt="banner" style="max-width: 100%; height: auto;">
         </div>
       </div>
-      
+
     </div>
   </div>
 
@@ -114,292 +113,83 @@ require_once $_SERVER['DOCUMENT_ROOT'] . $baseUrl . "/view/layout/header.php";
 </section>
 <!--Services-info end-->
 
-<!-- Featured Books -->
-<section id="best-selling-items" class="position-relative padding-large ">
+<!-- harry potter Books -->
+<section id="best-selling-items" class="position-relative padding-large">
   <div class="your-element" data-aos="fade-in">
     <div class="container">
       <div class="section-title d-md-flex justify-content-between align-items-center mb-4">
-        <h3 class="d-flex align-items-center">Featured Books</h3>
+        <h3 class="d-flex align-items-center">Harry Potter Books</h3>
         <a href="view/pages/books.php" class="btn">View All</a>
       </div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
 
       <div class="swiper product-swiper">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide">
-            <div class="card position-relative p-4 border rounded-3">
-              <div class="position-absolute">
-                <p class="bg-primary py-1 px-3 fs-6 text-white rounded-2">10% off</p>
-              </div>
-              <img src="<?= $baseUrl ?>/assets/images/product-item1.png" class="img-fluid shadow-sm" alt="product item">
-              <h6 class="mt-4 mb-0 fw-bold"><a href="<?= $baseUrl ?>/view/pages/bookPage.php">House of Sky Breath</a></h6>
-              <div class="review-content d-flex">
-                <p class="my-2 me-2 fs-6 text-black-50">Lauren Asher</p>
-
-                <div class="rating text-warning d-flex align-items-center">
-                  <svg class="star star-fill">
-                    <use xlink:href="#star-fill"></use>
-                  </svg>
-                  <svg class="star star-fill">
-                    <use xlink:href="#star-fill"></use>
-                  </svg>
-                  <svg class="star star-fill">
-                    <use xlink:href="#star-fill"></use>
-                  </svg>
-                  <svg class="star star-fill">
-                    <use xlink:href="#star-fill"></use>
-                  </svg>
-                  <svg class="star star-fill">
-                    <use xlink:href="#star-fill"></use>
-                  </svg>
-                </div>
-              </div>
-              <span class="price text-primary fw-bold mb-2 fs-5">$870</span>
-              <div class="card-concern position-absolute start-0 end-0 d-flex gap-2">
-                <button type="button" href="#" class="btn btn-dark" data-bs-toggle="tooltip" data-bs-placement="top"
-                  data-bs-title="Tooltip on top">
-                  <svg class="cart">
-                    <use xlink:href="#cart"></use>
-                  </svg>
-                </button>
-                <a href="#" class="btn btn-dark">
-                  <span>
-                    <svg class="wishlist">
-                      <use xlink:href="#heart"></use>
-                    </svg>
-                  </span>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="card position-relative p-4 border rounded-3">
-              <img src="<?= $baseUrl ?>/assets/images/product-item2.png" class="img-fluid shadow-sm" alt="product item">
-              <h6 class="mt-4 mb-0 fw-bold"><a href="index.html">Heartland Stars</a></h6>
-              <div class="review-content d-flex">
-                <p class="my-2 me-2 fs-6 text-black-50">Lauren Asher</p>
-
-                <div class="rating text-warning d-flex align-items-center">
-                  <svg class="star star-fill">
-                    <use xlink:href="#star-fill"></use>
-                  </svg>
-                  <svg class="star star-fill">
-                    <use xlink:href="#star-fill"></use>
-                  </svg>
-                  <svg class="star star-fill">
-                    <use xlink:href="#star-fill"></use>
-                  </svg>
-                  <svg class="star star-fill">
-                    <use xlink:href="#star-fill"></use>
-                  </svg>
-                  <svg class="star star-fill">
-                    <use xlink:href="#star-fill"></use>
-                  </svg>
-                </div>
-              </div>
-
-              <span class="price text-primary fw-bold mb-2 fs-5">$870</span>
-              <div class="card-concern position-absolute start-0 end-0 d-flex gap-2">
-                <button type="button" href="#" class="btn btn-dark" data-bs-toggle="tooltip" data-bs-placement="top"
-                  data-bs-title="Tooltip on top">
-                  <svg class="cart">
-                    <use xlink:href="#cart"></use>
-                  </svg>
-                </button>
-                <a href="#" class="btn btn-dark">
-                  <span>
-                    <svg class="wishlist">
-                      <use xlink:href="#heart"></use>
-                    </svg>
-                  </span>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="card position-relative p-4 border rounded-3">
-              <img src="<?= $baseUrl ?>/assets/images/product-item3.png" class="img-fluid shadow-sm" alt="product item">
-              <h6 class="mt-4 mb-0 fw-bold"><a href="index.html">Heavenly Bodies</a></h6>
-              <div class="review-content d-flex">
-                <p class="my-2 me-2 fs-6 text-black-50">Lauren Asher</p>
-
-                <div class="rating text-warning d-flex align-items-center">
-                  <svg class="star star-fill">
-                    <use xlink:href="#star-fill"></use>
-                  </svg>
-                  <svg class="star star-fill">
-                    <use xlink:href="#star-fill"></use>
-                  </svg>
-                  <svg class="star star-fill">
-                    <use xlink:href="#star-fill"></use>
-                  </svg>
-                  <svg class="star star-fill">
-                    <use xlink:href="#star-fill"></use>
-                  </svg>
-                  <svg class="star star-fill">
-                    <use xlink:href="#star-fill"></use>
-                  </svg>
-                </div>
-              </div>
-
-              <span class="price text-primary fw-bold mb-2 fs-5">$870</span>
-              <div class="card-concern position-absolute start-0 end-0 d-flex gap-2">
-                <button type="button" href="#" class="btn btn-dark" data-bs-toggle="tooltip" data-bs-placement="top"
-                  data-bs-title="Tooltip on top">
-                  <svg class="cart">
-                    <use xlink:href="#cart"></use>
-                  </svg>
-                </button>
-                <a href="#" class="btn btn-dark">
-                  <span>
-                    <svg class="wishlist">
-                      <use xlink:href="#heart"></use>
-                    </svg>
-                  </span>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="card position-relative p-4 border rounded-3">
-              <div class="position-absolute">
-                <p class="bg-primary py-1 px-3 fs-6 text-white rounded-2">10% off</p>
-              </div>
-              <img src="<?= $baseUrl ?>/assets/images/product-item4.png" class="img-fluid shadow-sm" alt="product item">
-              <h6 class="mt-4 mb-0 fw-bold"><a href="index.html">His Saving Grace</a></h6>
-              <div class="review-content d-flex">
-                <p class="my-2 me-2 fs-6 text-black-50">Lauren Asher</p>
-
-                <div class="rating text-warning d-flex align-items-center">
-                  <svg class="star star-fill">
-                    <use xlink:href="#star-fill"></use>
-                  </svg>
-                  <svg class="star star-fill">
-                    <use xlink:href="#star-fill"></use>
-                  </svg>
-                  <svg class="star star-fill">
-                    <use xlink:href="#star-fill"></use>
-                  </svg>
-                  <svg class="star star-fill">
-                    <use xlink:href="#star-fill"></use>
-                  </svg>
-                  <svg class="star star-fill">
-                    <use xlink:href="#star-fill"></use>
-                  </svg>
-                </div>
-              </div>
-
-              <span class="price text-primary fw-bold mb-2 fs-5">$870</span>
-              <div class="card-concern position-absolute start-0 end-0 d-flex gap-2">
-                <button type="button" href="#" class="btn btn-dark" data-bs-toggle="tooltip" data-bs-placement="top"
-                  data-bs-title="Tooltip on top">
-                  <svg class="cart">
-                    <use xlink:href="#cart"></use>
-                  </svg>
-                </button>
-                <a href="#" class="btn btn-dark">
-                  <span>
-                    <svg class="wishlist">
-                      <use xlink:href="#heart"></use>
-                    </svg>
-                  </span>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="card position-relative p-4 border rounded-3">
-              <img src="<?= $baseUrl ?>/assets/images/product-item5.png" class="img-fluid shadow-sm" alt="product item">
-              <h6 class="mt-4 mb-0 fw-bold"><a href="index.html">My Dearest Darkest</a></h6>
-              <div class="review-content d-flex">
-                <p class="my-2 me-2 fs-6 text-black-50">Lauren Asher</p>
-
-                <div class="rating text-warning d-flex align-items-center d-flex align-items-center">
-                  <svg class="star star-fill">
-                    <use xlink:href="#star-fill"></use>
-                  </svg>
-                  <svg class="star star-fill">
-                    <use xlink:href="#star-fill"></use>
-                  </svg>
-                  <svg class="star star-fill">
-                    <use xlink:href="#star-fill"></use>
-                  </svg>
-                  <svg class="star star-fill">
-                    <use xlink:href="#star-fill"></use>
-                  </svg>
-                  <svg class="star star-fill">
-                    <use xlink:href="#star-fill"></use>
-                  </svg>
-                </div>
-              </div>
-
-              <span class="price text-primary fw-bold mb-2 fs-5">$870</span>
-              <div class="card-concern position-absolute start-0 end-0 d-flex gap-2">
-                <button type="button" href="#" class="btn btn-dark" data-bs-toggle="tooltip" data-bs-placement="top"
-                  data-bs-title="Tooltip on top">
-                  <svg class="cart">
-                    <use xlink:href="#cart"></use>
-                  </svg>
-                </button>
-                <a href="#" class="btn btn-dark">
-                  <span>
-                    <svg class="wishlist">
-                      <use xlink:href="#heart"></use>
-                    </svg>
-                  </span>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="card position-relative p-4 border rounded-3">
-              <img src="<?= $baseUrl ?>/assets/images/product-item6.png" class="img-fluid shadow-sm" alt="product item">
-              <h6 class="mt-4 mb-0 fw-bold"><a href="index.html">The Story of Success</a></h6>
-              <div class="review-content d-flex">
-                <p class="my-2 me-2 fs-6 text-black-50">Lauren Asher</p>
-
-                <div class="rating text-warning d-flex align-items-center">
-                  <svg class="star star-fill">
-                    <use xlink:href="#star-fill"></use>
-                  </svg>
-                  <svg class="star star-fill">
-                    <use xlink:href="#star-fill"></use>
-                  </svg>
-                  <svg class="star star-fill">
-                    <use xlink:href="#star-fill"></use>
-                  </svg>
-                  <svg class="star star-fill">
-                    <use xlink:href="#star-fill"></use>
-                  </svg>
-                  <svg class="star star-fill">
-                    <use xlink:href="#star-fill"></use>
-                  </svg>
-                </div>
-              </div>
-
-              <span class="price text-primary fw-bold mb-2 fs-5">$870</span>
-              <div class="card-concern position-absolute start-0 end-0 d-flex gap-2">
-                <button type="button" href="#" class="btn btn-dark" data-bs-toggle="tooltip" data-bs-placement="top"
-                  data-bs-title="Tooltip on top">
-                  <svg class="cart">
-                    <use xlink:href="#cart"></use>
-                  </svg>
-                </button>
-                <a href="#" class="btn btn-dark">
-                  <span>
-                    <svg class="wishlist">
-                      <use xlink:href="#heart"></use>
-                    </svg>
-                  </span>
-                </a>
-              </div>
-            </div>
-          </div>
-
+        <div class="swiper-wrapper" id="harry-potter-books">
+          <!-- Harry Potter books will be dynamically inserted here -->
         </div>
+        <!-- Add Swiper navigation buttons -->
+
       </div>
     </div>
   </div>
 </section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    fetch('/client-site/controller/bookController.php?harry_potter=true')
+      .then(response => response.json())
+      .then(data => {
+        if (data.status === 'success') {
+          const booksContainer = document.getElementById('harry-potter-books');
+          const baseUrl = '/client-site'; // Define your base URL here
+          data.data.forEach(book => {
+            const bookElement = `
+                        <div class="swiper-slide">
+                            <div class="card position-relative p-4 border rounded-3">
+                                <img src="${book.cover_image}" class="img-fluid shadow-sm" alt="${book.title}">
+                                <h6 class="mt-4 mb-0 fw-bold">
+                                    <a href="${baseUrl}/view/pages/bookPage.php?id=${encodeURIComponent(book.id)}">${book.title}</a>
+                                </h6>
+                                <div class="review-content d-flex">
+                                    <p class="my-2 me-2 fs-6 text-black-50">${book.author}</p>
+                                    <div class="rating text-warning d-flex align-items-center">
+                                        <!-- Add star ratings here based on book.rating -->
+                                    </div>
+                                </div>
+                                <div class="card-concern position-absolute start-0 end-0 d-flex gap-2">
+                                    <a href="#" class="btn btn-dark">
+                                        <span><svg class="wishlist"><use xlink:href="#heart"></use></svg></span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+            booksContainer.innerHTML += bookElement;
+          });
+
+          // Initialize Swiper after adding slides
+          // new Swiper('.product-swiper', {
+          //   loop: true,
+          //   navigation: {
+          //     nextEl: '.swiper-button-next',
+          //     prevEl: '.swiper-button-prev',
+          //   },
+          //   slidesPerView: 4.5, // Adjust the number of slides per view
+          //   spaceBetween: 30,
+          // });
+        } else {
+          console.error('No Harry Potter books found:', data.message);
+        }
+      })
+      .catch(error => console.error('Error fetching Harry Potter books:', error));
+  });
+</script>
+
+
+
+<!-- harry potter Books ends -->
+
 
 
 <!-- Category Section -->
@@ -412,7 +202,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . $baseUrl . "/view/layout/header.php";
       <!-- First Three Categories (Always Visible) -->
       <div class="col-md-4">
         <div class="card text-center mb-4 border-0 rounded-3 category-box">
-          <a href="<?= $baseUrl ?>/view/pages/books.php">
+          <a href="<?= $baseUrl ?>/view/pages/books.php?genre_id=1">
             <img src="<?= $baseUrl ?>/assets/images/fiction.jpg" class="img-fluid rounded-3 category-image" alt="fiction">
             <h6 class="position-absolute bottom-0 bg-primary m-4 py-2 px-3 rounded-3">
               <a href="<?= $baseUrl ?>/view/pages/books.php" class="text-white">Fiction</a>
@@ -422,7 +212,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . $baseUrl . "/view/layout/header.php";
       </div>
       <div class="col-md-4">
         <div class="card text-center mb-4 border-0 rounded-3 category-box">
-          <a href="<?= $baseUrl ?>/view/pages/books.php">
+          <a href="<?= $baseUrl ?>/view/pages/books.php?genre_id=3">
             <img src="<?= $baseUrl ?>/assets/images/horror.jpg" class="img-fluid rounded-3 category-image" alt="Horror">
             <h6 class="position-absolute bottom-0 bg-primary m-4 py-2 px-3 rounded-3">
               <a href="<?= $baseUrl ?>/view/pages/books.php" class="text-white">Horror</a>
@@ -432,7 +222,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . $baseUrl . "/view/layout/header.php";
       </div>
       <div class="col-md-4">
         <div class="card text-center mb-4 border-0 rounded-3 category-box">
-          <a href="<?= $baseUrl ?>/view/pages/books.php">
+          <a href="<?= $baseUrl ?>/view/pages/books.php?genre_id=4">
             <img src="<?= $baseUrl ?>/assets/images/historical.jpg" class="img-fluid rounded-3 category-image" alt="Historical">
             <h6 class="position-absolute bottom-0 bg-primary m-4 py-2 px-3 rounded-3">
               <a href="<?= $baseUrl ?>/view/pages/books.php" class="text-white">Historical</a>
@@ -446,7 +236,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . $baseUrl . "/view/layout/header.php";
         <div class="row">
           <div class="col-md-4">
             <div class="card text-center mb-4 border-0 rounded-3 category-box">
-              <a href="<?= $baseUrl ?>/view/pages/books.php">
+              <a href="<?= $baseUrl ?>/view/pages/books.php?category=Science Fiction">
                 <img src="<?= $baseUrl ?>/assets/images/science.jpg" class="img-fluid rounded-3 category-image" alt="Science Fiction">
                 <h6 class="position-absolute bottom-0 bg-primary m-4 py-2 px-3 rounded-3">
                   <a href="<?= $baseUrl ?>/view/pages/books.php" class="text-white">Science Fiction</a>
@@ -519,10 +309,6 @@ require_once $_SERVER['DOCUMENT_ROOT'] . $baseUrl . "/view/layout/header.php";
 
 <!-- Your categories section here -->
 
-
-</body>
-
-
 <!--Audiobook Section-->
 <section id="audiobook-section">
 
@@ -540,304 +326,78 @@ require_once $_SERVER['DOCUMENT_ROOT'] . $baseUrl . "/view/layout/header.php";
 <!--Audiobook Section end-->
 
 <!--Books section-->
-<section id="best-selling-items" class="position-relative padding-large ">
-  <!-- <div class="your-element" data-aos="fade-in"> -->
+<section id="best-selling-items" class="position-relative padding-large">
+  <div class="your-element" data-aos="fade-in">
     <div class="container">
       <div class="section-title d-md-flex justify-content-between align-items-center mb-4">
-        <h3 class="d-flex align-items-center">Books</h3>
+        <h3 class="d-flex align-items-center"> Books</h3>
         <a href="view/pages/books.php" class="btn">View All</a>
       </div>
-      <div class="position-absolute top-50 end-0 pe-0 pe-xxl-5 me-0 me-xxl-5 swiper-next product-slider-button-next">
-        <svg class="chevron-forward-circle d-flex justify-content-center align-items-center p-2" width="80" height="80">
-          <use xlink:href="#alt-arrow-right-outline"></use>
-        </svg>
-      </div>
-      <div class="position-absolute top-50 start-0 ps-0 ps-xxl-5 ms-0 ms-xxl-5 swiper-prev product-slider-button-prev">
-        <svg class="chevron-back-circle d-flex justify-content-center align-items-center p-2" width="80" height="80">
-          <use xlink:href="#alt-arrow-left-outline"></use>
-        </svg>
-      </div>
+
       <div class="swiper product-swiper">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide">
-            <div class="card position-relative p-4 border rounded-3">
-              <div class="position-absolute">
-                <p class="bg-primary py-1 px-3 fs-6 text-white rounded-2">10% off</p>
-              </div>
-              <img src="<?= $baseUrl ?>/assets/images/product-item1.png" class="img-fluid shadow-sm" alt="product item">
-              <h6 class="mt-4 mb-0 fw-bold"><a href="index.html">House of Sky Breath</a></h6>
-              <div class="review-content d-flex">
-                <p class="my-2 me-2 fs-6 text-black-50">Lauren Asher</p>
-
-                <div class="rating text-warning d-flex align-items-center">
-                  <svg class="star star-fill">
-                    <use xlink:href="#star-fill"></use>
-                  </svg>
-                  <svg class="star star-fill">
-                    <use xlink:href="#star-fill"></use>
-                  </svg>
-                  <svg class="star star-fill">
-                    <use xlink:href="#star-fill"></use>
-                  </svg>
-                  <svg class="star star-fill">
-                    <use xlink:href="#star-fill"></use>
-                  </svg>
-                  <svg class="star star-fill">
-                    <use xlink:href="#star-fill"></use>
-                  </svg>
-                </div>
-              </div>
-              <span class="price text-primary fw-bold mb-2 fs-5">$870</span>
-              <div class="card-concern position-absolute start-0 end-0 d-flex gap-2">
-                <button type="button" href="#" class="btn btn-dark" data-bs-toggle="tooltip" data-bs-placement="top"
-                  data-bs-title="Tooltip on top">
-                  <svg class="cart">
-                    <use xlink:href="#cart"></use>
-                  </svg>
-                </button>
-                <a href="#" class="btn btn-dark">
-                  <span>
-                    <svg class="wishlist">
-                      <use xlink:href="#heart"></use>
-                    </svg>
-                  </span>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="card position-relative p-4 border rounded-3">
-              <img src="<?= $baseUrl ?>/assets/images/product-item2.png" class="img-fluid shadow-sm" alt="product item">
-              <h6 class="mt-4 mb-0 fw-bold"><a href="index.html">Heartland Stars</a></h6>
-              <div class="review-content d-flex">
-                <p class="my-2 me-2 fs-6 text-black-50">Lauren Asher</p>
-
-                <div class="rating text-warning d-flex align-items-center">
-                  <svg class="star star-fill">
-                    <use xlink:href="#star-fill"></use>
-                  </svg>
-                  <svg class="star star-fill">
-                    <use xlink:href="#star-fill"></use>
-                  </svg>
-                  <svg class="star star-fill">
-                    <use xlink:href="#star-fill"></use>
-                  </svg>
-                  <svg class="star star-fill">
-                    <use xlink:href="#star-fill"></use>
-                  </svg>
-                  <svg class="star star-fill">
-                    <use xlink:href="#star-fill"></use>
-                  </svg>
-                </div>
-              </div>
-
-              <span class="price text-primary fw-bold mb-2 fs-5">$870</span>
-              <div class="card-concern position-absolute start-0 end-0 d-flex gap-2">
-                <button type="button" href="#" class="btn btn-dark" data-bs-toggle="tooltip" data-bs-placement="top"
-                  data-bs-title="Tooltip on top">
-                  <svg class="cart">
-                    <use xlink:href="#cart"></use>
-                  </svg>
-                </button>
-                <a href="#" class="btn btn-dark">
-                  <span>
-                    <svg class="wishlist">
-                      <use xlink:href="#heart"></use>
-                    </svg>
-                  </span>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="card position-relative p-4 border rounded-3">
-              <img src="<?= $baseUrl ?>/assets/images/product-item3.png" class="img-fluid shadow-sm" alt="product item">
-              <h6 class="mt-4 mb-0 fw-bold"><a href="index.html">Heavenly Bodies</a></h6>
-              <div class="review-content d-flex">
-                <p class="my-2 me-2 fs-6 text-black-50">Lauren Asher</p>
-
-                <div class="rating text-warning d-flex align-items-center">
-                  <svg class="star star-fill">
-                    <use xlink:href="#star-fill"></use>
-                  </svg>
-                  <svg class="star star-fill">
-                    <use xlink:href="#star-fill"></use>
-                  </svg>
-                  <svg class="star star-fill">
-                    <use xlink:href="#star-fill"></use>
-                  </svg>
-                  <svg class="star star-fill">
-                    <use xlink:href="#star-fill"></use>
-                  </svg>
-                  <svg class="star star-fill">
-                    <use xlink:href="#star-fill"></use>
-                  </svg>
-                </div>
-              </div>
-
-              <span class="price text-primary fw-bold mb-2 fs-5">$870</span>
-              <div class="card-concern position-absolute start-0 end-0 d-flex gap-2">
-                <button type="button" href="#" class="btn btn-dark" data-bs-toggle="tooltip" data-bs-placement="top"
-                  data-bs-title="Tooltip on top">
-                  <svg class="cart">
-                    <use xlink:href="#cart"></use>
-                  </svg>
-                </button>
-                <a href="#" class="btn btn-dark">
-                  <span>
-                    <svg class="wishlist">
-                      <use xlink:href="#heart"></use>
-                    </svg>
-                  </span>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="card position-relative p-4 border rounded-3">
-              <div class="position-absolute">
-                <p class="bg-primary py-1 px-3 fs-6 text-white rounded-2">10% off</p>
-              </div>
-              <img src="<?= $baseUrl ?>/assets/images/product-item4.png" class="img-fluid shadow-sm" alt="product item">
-              <h6 class="mt-4 mb-0 fw-bold"><a href="index.html">His Saving Grace</a></h6>
-              <div class="review-content d-flex">
-                <p class="my-2 me-2 fs-6 text-black-50">Lauren Asher</p>
-
-                <div class="rating text-warning d-flex align-items-center">
-                  <svg class="star star-fill">
-                    <use xlink:href="#star-fill"></use>
-                  </svg>
-                  <svg class="star star-fill">
-                    <use xlink:href="#star-fill"></use>
-                  </svg>
-                  <svg class="star star-fill">
-                    <use xlink:href="#star-fill"></use>
-                  </svg>
-                  <svg class="star star-fill">
-                    <use xlink:href="#star-fill"></use>
-                  </svg>
-                  <svg class="star star-fill">
-                    <use xlink:href="#star-fill"></use>
-                  </svg>
-                </div>
-              </div>
-
-              <span class="price text-primary fw-bold mb-2 fs-5">$870</span>
-              <div class="card-concern position-absolute start-0 end-0 d-flex gap-2">
-                <button type="button" href="#" class="btn btn-dark" data-bs-toggle="tooltip" data-bs-placement="top"
-                  data-bs-title="Tooltip on top">
-                  <svg class="cart">
-                    <use xlink:href="#cart"></use>
-                  </svg>
-                </button>
-                <a href="#" class="btn btn-dark">
-                  <span>
-                    <svg class="wishlist">
-                      <use xlink:href="#heart"></use>
-                    </svg>
-                  </span>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="card position-relative p-4 border rounded-3">
-              <img src="<?= $baseUrl ?>/assets/images/product-item5.png" class="img-fluid shadow-sm" alt="product item">
-              <h6 class="mt-4 mb-0 fw-bold"><a href="index.html">My Dearest Darkest</a></h6>
-              <div class="review-content d-flex">
-                <p class="my-2 me-2 fs-6 text-black-50">Lauren Asher</p>
-
-                <div class="rating text-warning d-flex align-items-center d-flex align-items-center">
-                  <svg class="star star-fill">
-                    <use xlink:href="#star-fill"></use>
-                  </svg>
-                  <svg class="star star-fill">
-                    <use xlink:href="#star-fill"></use>
-                  </svg>
-                  <svg class="star star-fill">
-                    <use xlink:href="#star-fill"></use>
-                  </svg>
-                  <svg class="star star-fill">
-                    <use xlink:href="#star-fill"></use>
-                  </svg>
-                  <svg class="star star-fill">
-                    <use xlink:href="#star-fill"></use>
-                  </svg>
-                </div>
-              </div>
-
-              <span class="price text-primary fw-bold mb-2 fs-5">$870</span>
-              <div class="card-concern position-absolute start-0 end-0 d-flex gap-2">
-                <button type="button" href="#" class="btn btn-dark" data-bs-toggle="tooltip" data-bs-placement="top"
-                  data-bs-title="Tooltip on top">
-                  <svg class="cart">
-                    <use xlink:href="#cart"></use>
-                  </svg>
-                </button>
-                <a href="#" class="btn btn-dark">
-                  <span>
-                    <svg class="wishlist">
-                      <use xlink:href="#heart"></use>
-                    </svg>
-                  </span>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="card position-relative p-4 border rounded-3">
-              <img src="<?= $baseUrl ?>/assets/images/product-item6.png" class="img-fluid shadow-sm" alt="product item">
-              <h6 class="mt-4 mb-0 fw-bold"><a href="index.html">The Story of Success</a></h6>
-              <div class="review-content d-flex">
-                <p class="my-2 me-2 fs-6 text-black-50">Lauren Asher</p>
-
-                <div class="rating text-warning d-flex align-items-center">
-                  <svg class="star star-fill">
-                    <use xlink:href="#star-fill"></use>
-                  </svg>
-                  <svg class="star star-fill">
-                    <use xlink:href="#star-fill"></use>
-                  </svg>
-                  <svg class="star star-fill">
-                    <use xlink:href="#star-fill"></use>
-                  </svg>
-                  <svg class="star star-fill">
-                    <use xlink:href="#star-fill"></use>
-                  </svg>
-                  <svg class="star star-fill">
-                    <use xlink:href="#star-fill"></use>
-                  </svg>
-                </div>
-              </div>
-
-              <span class="price text-primary fw-bold mb-2 fs-5">$870</span>
-              <div class="card-concern position-absolute start-0 end-0 d-flex gap-2">
-                <button type="button" href="#" class="btn btn-dark" data-bs-toggle="tooltip" data-bs-placement="top"
-                  data-bs-title="Tooltip on top">
-                  <svg class="cart">
-                    <use xlink:href="#cart"></use>
-                  </svg>
-                </button>
-                <a href="#" class="btn btn-dark">
-                  <span>
-                    <svg class="wishlist">
-                      <use xlink:href="#heart"></use>
-                    </svg>
-                  </span>
-                </a>
-              </div>
-            </div>
-          </div>
-
+        <div class="swiper-wrapper" id="all-books">
+          <!-- books will be dynamically inserted here -->
         </div>
+        <!-- Add Swiper navigation buttons -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+        
       </div>
     </div>
   </div>
 </section>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    fetch('/client-site/controller/bookController.php?all_books=true')
+      .then(response => response.json())
+      .then(data => {
+        if (data.status === 'success') {
+          const booksContainer = document.getElementById('all-books');
+          const baseUrl = '/client-site'; // Define your base URL here
+          data.data.forEach(book => {
+            const bookElement = `
+                        <div class="swiper-slide">
+                            <div class="card position-relative p-4 border rounded-3">
+                                <img src="${book.cover_image}" class="img-fluid shadow-sm" alt="${book.title}">
+                                <h6 class="mt-4 mb-0 fw-bold">
+                                    <a href="${baseUrl}/view/pages/bookPage.php?id=${encodeURIComponent(book.id)}">${book.title}</a>
+                                </h6>
+                                <div class="review-content d-flex">
+                                    <p class="my-2 me-2 fs-6 text-black-50">${book.author}</p>
+                                    <div class="rating text-warning d-flex align-items-center">
+                                        <!-- Add star ratings here based on book.rating -->
+                                    </div>
+                                </div>
+                                <div class="card-concern position-absolute start-0 end-0 d-flex gap-2">
+                                    <a href="#" class="btn btn-dark">
+                                        <span><svg class="wishlist"><use xlink:href="#heart"></use></svg></span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+            booksContainer.innerHTML += bookElement;
+          });
+
+          // Initialize Swiper after adding slides
+        //   new Swiper('.product-swiper', {
+        //     loop: true,
+        //     navigation: {
+        //       nextEl: '.swiper-button-next',
+        //       prevEl: '.swiper-button-prev',
+        //     },
+        //     slidesPerView: 4.5,  //Adjust the number of slides per view
+        //     spaceBetween: 30,
+        //   });
+         }
+         else {
+          console.error('No books found:', data.message);
+        }
+      })
+      .catch(error => console.error('Error fetching books:', error));
+  });
+</script>
 <!--Books ends-->
-
-
-
 
 
 
@@ -1488,5 +1048,5 @@ require_once $_SERVER['DOCUMENT_ROOT'] . $baseUrl . "/view/layout/header.php";
 
 
 
+<?php require_once "view/layout/footer.php"; ?>
 
-    <?php require_once "view/layout/footer.php"; ?>
