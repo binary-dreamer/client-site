@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 //category see more/less
 document.addEventListener("DOMContentLoaded", function () {
-  console.log("Script loaded and running!");
+  // console.log("Script loaded and running!");
 
   let seeMoreBtn = document.getElementById("seeMoreBtn");
   let moreCategories = document.getElementById("moreCategories");
