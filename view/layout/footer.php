@@ -1,7 +1,7 @@
 <?php
 $baseUrl = '/client-site';
 ?>
-
+<hr>
 <footer id="footer" class="padding-small">
   <div class="container">
     <div class="row">

@@ -292,7 +292,7 @@ $userProfileImage = $_SESSION['user_profile_image'] ?? "$baseUrl/assets/images/d
                       </div>
                       <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">
                         <li><a class="dropdown-item" href="<?= $baseUrl ?>/view/pages/accountsetting.php">Account Settings</a></li>
-                        <li><a class="dropdown-item" href="<?= $baseUrl ?>/view/pages/subscription.php">Subscription</a></li>
+                        <!-- <li><a class="dropdown-item" href="<?= $baseUrl ?>/view/pages/subscription.php">Subscription</a></li> -->
                         <li><a class="dropdown-item" href="<?= $baseUrl ?>/view/pages/journaling.php">Journaling</a></li>
                         <li><a class="dropdown-item" href="<?= $baseUrl ?>/view/pages/wishlist.php">Wishlist</a></li>
                         <li>

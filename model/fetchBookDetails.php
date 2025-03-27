@@ -43,14 +43,24 @@ if ($book_id > 0) {
         if ($pdf) {
             $pdfPath = '/NovelNest/assets/pdfs/' . rawurlencode($pdf['file']);
             $output .= '
-                <button class="btn btn-primary view-flipbook-btn"
-                        data-title="' . htmlspecialchars($book['title']) . '"
-                        data-pdf="' . $pdfPath . '"
-                        data-bs-toggle="modal"
-                        data-bs-target="#flipbookModal">
-                    Start Reading
-                </button>';
+                        <div class="d-flex gap-2">
+                            <button class="btn btn-primary view-flipbook-btn"
+                                    data-title="' . htmlspecialchars($book['title']) . '"
+                                    data-pdf="' . $pdfPath . '"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#flipbookModal">
+                                Start Reading
+                            </button>
+                            <button class="btn btn-secondary view-magazine-btn"
+                                    data-title="' . htmlspecialchars($book['title']) . '"
+                                    data-pdf="' . $pdfPath . '"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#magazineModal">
+                                View Flipbook
+                            </button>
+                        </div>';
         }
+
 
         $output .= '
                 <div class="social mt-4">
@@ -72,4 +82,3 @@ if ($book_id > 0) {
 } else {
     echo '<p class="text-center">Invalid book ID.</p>';
 }
-?>
