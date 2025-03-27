@@ -1,22 +1,35 @@
 <?php
-require_once $_SERVER['DOCUMENT_ROOT'] . "/client-site/config/db.php"; // Adjust path as needed
+$baseUrl = '/client-site';
+require_once $_SERVER['DOCUMENT_ROOT'] . $baseUrl . '/model/AudiobookClass.php';
 
-$db = new DB(); // Create an instance of the DB class
-$conn = $db->connection(); // Get the database connection
+// header('Content-Type: application/json');
+// header("Access-Control-Allow-Origin: *");
 
-$query = "SELECT a.id, a.name AS audiobook_name, a.description, a.file AS audio_file, 
-                 a.narrator, a.uploaded_at, b.cover_image AS book_image, b.title AS book_name 
-          FROM audiobooks a 
-          JOIN books b ON a.book_id = b.id";
+$AudioFetch = new AudiobookClass();
 
-$result = mysqli_query($conn, $query);
-$audiobooks = [];
-
-if ($result) {
-    while ($row = mysqli_fetch_assoc($result)) {
-        $audiobooks[] = $row;
+if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+    // Fetch a specific audiobook by ID
+    if (isset($_GET['audiobook']) && is_numeric($_GET['audiobook'])) {
+        $audiobook = $AudioFetch->getAudiobookById($_GET['audiobook']);
+        if ($audiobook) {
+            echo json_encode(["status" => "success", "data" => $audiobook]);
+        } else {
+            echo json_encode(["status" => "error", "message" => "No audiobook found."]);
+        }
+        exit;
     }
+
+// Fetch books that have audiobooks
+if (isset($_GET['fetch_books_with_audiobooks'])) {
+    $booksWithAudiobooks = $AudioFetch->getBooksWithAudiobooks();
+    if (!empty($booksWithAudiobooks)) {
+        echo json_encode(["status" => "success", "data" => $booksWithAudiobooks]);
+    } else {
+        echo json_encode(["status" => "error", "message" => "No books with audiobooks found."]);
+    }
+    exit;
 }
 
-mysqli_close($conn);
+// echo json_encode(["status" => "error", "message" => "Invalid request."]);
+}
 ?>
