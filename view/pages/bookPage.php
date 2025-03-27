@@ -28,7 +28,7 @@ $book_id = isset($_GET['id']) ? intval($_GET['id']) : 0;
         </div>
     </section>
     <section class="ebook-container">
-        <div class="ebook-content">
+        <div class="">
             <div id="book-details">
                 <p class="text-center">Loading book details...</p>
             </div>

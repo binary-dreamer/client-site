@@ -6,6 +6,9 @@ require_once $_SERVER['DOCUMENT_ROOT'] . $baseUrl . "/config/DB.php";
 $db = new DB();
 $conn = $db->connection();
 
+// Get active genre from URL (default: 0 for All Genres)
+$activeGenreId = isset($_GET['genre_id']) ? (int)$_GET['genre_id'] : 0;
+
 // Fetch all books with genre names
 $query = "SELECT books.*, genre.name AS genre_name FROM books 
           JOIN genre ON books.genre_id = genre.id";
@@ -30,12 +33,11 @@ $genreResult = $conn->query($genreQuery);
 <div class="text-center mx-auto pb-5 wow fadeInUp" 
      data-wow-delay="0.2s" 
      style="
-       
        background-image: url('<?= $baseUrl ?>/assets/images/banner_2.jpg'); 
        background-size: cover; 
        background-position: center; 
        background-repeat: no-repeat; 
-       padding: 65px ; ">
+       padding: 65px;">
   
   <h1 class="text-primary" style="color: #ffc107;">Books</h1>
 
@@ -48,40 +50,24 @@ $genreResult = $conn->query($genreQuery);
   
 </div>
 
-
-<section id="popular-books" class="bookshelf py-0 my-0">
+<section id="popular-books" class="bookshelf py-0 my-0 mt-5">
   <div class="container">
     <div class="row">
       <!-- Categories Column -->
       <div class="col-md-3">
-        <div class="widget-product-categories pt-5">
-
-          <!-- Search Box -->
-          <!-- <form role="search" method="get" class="search-form mb-3" action="search.php">
-            <input type="search" id="search-form" class="search-field"
-              placeholder="Type and press enter"
-              name="search"
-              value="<?= isset($_GET['search']) ? htmlspecialchars($_GET['search']) : '' ?>" />
-            <button type="submit" class="search-submit">
-              <svg class="search">
-                <use xlink:href="#search"></use>
-              </svg>
-            </button>
-          </form> -->
-
-
+        <div class="widget-product-categories book-widget pt-5">
           <div class="section-title overflow-hidden mb-2">
             <h3 class="d-flex flex-column mb-0">Categories</h3>
           </div>
 
-          <ul class="product-categories mb-0 sidebar-list list-unstyled">
+          <ul class="product-categories book-categories mb-0 sidebar-list list-unstyled">
             <li class="cat-item">
-              <a href="?genre_id=0" class="tab <?= $activeGenreId == 0 ? 'active' : '' ?>">All Genres</a>
+              <a href="?genre_id=0" class="tab <?= ($activeGenreId == 0) ? 'active' : '' ?>">All Genres</a>
             </li>
             <?php while ($row = $genreResult->fetch_assoc()) : ?>
               <li class="cat-item">
                 <a href="?genre_id=<?= $row['id']; ?>"
-                  class="tab <?= $activeGenreId == $row['id'] ? 'active' : '' ?>">
+                  class="tab <?= ($activeGenreId == $row['id']) ? 'active' : '' ?>">
                   <?= htmlspecialchars($row['name']); ?>
                 </a>
               </li>
@@ -102,9 +88,6 @@ $genreResult = $conn->query($genreQuery);
   </div>
 </section>
 
-
-
-
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
   $(document).ready(function() {
@@ -114,14 +97,16 @@ $genreResult = $conn->query($genreQuery);
       $.ajax({
         url: `${baseUrl}/model/fetchBooks.php`,
         type: "POST",
-        data: {
-          genre_id: genre_id
-        },
+        data: { genre_id: genre_id },
         beforeSend: function() {
           $("#book-list").html('<p class="text-center">Loading books...</p>');
         },
         success: function(response) {
           $("#book-list").html(response);
+
+          // AFTER loading, update active class
+          $(".tab").removeClass("active");
+          $(`.tab[href="?genre_id=${genre_id}"]`).addClass("active");
         }
       });
     }
@@ -133,23 +118,16 @@ $genreResult = $conn->query($genreQuery);
     // Load books based on URL parameter
     loadBooks(genreIdFromUrl);
 
-    // Set active tab based on genre_id
-    $(".tab").removeClass("active");
-    $(`.tab[data-genre-id="${genreIdFromUrl}"]`).addClass("active");
-
     // Handle tab click event
-    $(".tab").click(function() {
-      $(".tab").removeClass("active");
-      $(this).addClass("active");
+    $(".tab").click(function(event) {
+        event.preventDefault(); // Prevent default page reload
+        var genre_id = $(this).attr("href").split("=")[1]; // Extract genre_id from href
 
-      var genre_id = $(this).attr("data-genre-id");
-      loadBooks(genre_id);
+        loadBooks(genre_id);
 
-      // Update URL without reloading
-      const newUrl = window.location.pathname + "?genre_id=" + genre_id;
-      window.history.pushState({
-        path: newUrl
-      }, "", newUrl);
+        // Update URL without reloading
+        const newUrl = window.location.pathname + "?genre_id=" + genre_id;
+        window.history.pushState({ path: newUrl }, "", newUrl);
     });
   });
 </script>

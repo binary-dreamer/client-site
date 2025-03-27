@@ -32,11 +32,11 @@ $activeGenreId = isset($_GET['genre_id']) ? (int)$_GET['genre_id'] : 0;
     <div class="row">
         <!-- Sidebar Categories Column -->
         <div class="col-md-3">
-            <div class="widget-product-categories pt-5">
+            <div class="widget-product-categories audiobook-widget pt-5 mt-5">
                 <div class="section-title overflow-hidden mb-2">
                     <h3 class="d-flex flex-column mb-0">Categories</h3>
                 </div>
-                <ul class="product-categories mb-0 sidebar-list list-unstyled">
+                <ul class="product-categories audiobook-categories mb-0 sidebar-list list-unstyled">
                     <li class="cat-item">
                         <a href="?genre_id=0" class="tab <?= $activeGenreId == 0 ? 'active' : '' ?>">All Genres</a>
                     </li>
@@ -124,21 +124,7 @@ $(document).ready(function() {
 <!-- Styles -->
 
 <style>
-.tab {
-    display: block;
-    padding: 10px 15px;
-    color: #333;
-    text-decoration: none;
-    border-radius: 4px;
-    transition: background 0.3s;
-}
-.tab:hover {
-    background-color: #f8f9fa;
-}
-.tab.active {
-    background-color: #20c997;
-    color: #fff;
-}
+
 
 #audiobook-list {
     display: flex;

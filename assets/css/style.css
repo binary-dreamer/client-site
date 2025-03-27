@@ -2094,6 +2094,121 @@ select {
 }
 
 
+/* audiobook page */
+.audiobook-widget {
+  background: #f8f9fa; /* Light background for better visibility */
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.audiobook-widget .section-title h3 {
+  font-weight: 600;
+  color: #05445e; /* Your primary theme color */
+  border-bottom: 2px solid #20c997;
+  padding-bottom: 8px;
+}
+
+.audiobook-categories {
+  padding-left: 0;
+  margin-top: 15px;
+}
+
+.audiobook-categories .cat-item {
+  list-style: none;
+  margin-bottom: 10px;
+}
+
+.audiobook-categories .cat-item a {
+  display: block;
+  padding: 10px 15px;
+  font-weight: 500;
+  color: #05445e;
+  text-decoration: none;
+  background: #ffffff;
+  border-radius: 6px;
+  transition: all 0.3s ease-in-out;
+}
+
+.audiobook-categories .cat-item a:hover {
+  background: #20c997;
+  color: #ffffff;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.15);
+}
+
+.audiobook-categories .cat-item a.active {
+  background: #189ab4;
+  color: #ffffff;
+  font-weight: 600;
+  border-left: 5px solid #20c997;
+}
+
+/* book page  */
+
+.book-widget {
+  background: #f8f9fa; /* Light background for better visibility */
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.book-widget .section-title h3 {
+  font-weight: 600;
+  color: #05445e; /* Your primary theme color */
+  border-bottom: 2px solid #20c997;
+  padding-bottom: 8px;
+}
+
+.book-categories {
+  padding-left: 0;
+  margin-top: 15px;
+}
+
+.book-categories .cat-item {
+  list-style: none;
+  margin-bottom: 10px;
+}
+
+.book-categories .cat-item a {
+  display: block;
+  padding: 10px 15px;
+  font-weight: 500;
+  color: #05445e;
+  text-decoration: none;
+  background: #ffffff;
+  border-radius: 6px;
+  transition: all 0.3s ease-in-out;
+}
+
+.book-categories .cat-item a:hover {
+  background: #20c997;
+  color: #ffffff;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.15);
+}
+
+.book-categories .cat-item a.active {
+  background: #189ab4;
+  color: #ffffff;
+  font-weight: 600;
+  border-left: 5px solid #20c997;
+}
+
+.tab {
+  display: block;
+  padding: 10px 15px;
+  color: #333;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background 0.3s;
+}
+.tab:hover {
+  background-color: #f8f9fa;
+}
+.tab.active {
+  background-color: #20c997 !important;
+  color: #ffffff !important;
+}
+
 /* searchbox  */
 /* .search-form {
   display: flex;

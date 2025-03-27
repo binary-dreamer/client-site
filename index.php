@@ -54,19 +54,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . $baseUrl . "/view/layout/header.php";
 <section id="company-services" class="padding-large pb-0">
   <div class="container">
     <div class="row">
-      <div class="col-lg-3 col-md-6 pb-3 pb-lg-0 zoom-in">
-        <div class="icon-box d-flex">
-          <div class="icon-box-icon pe-3 pb-3">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
-              <path d="M249.6 471.5c10.8 3.8 22.4-4.1 22.4-15.5l0-377.4c0-4.2-1.6-8.4-5-11C247.4 52 202.4 32 144 32C93.5 32 46.3 45.3 18.1 56.1C6.8 60.5 0 71.7 0 83.8L0 454.1c0 11.9 12.8 20.2 24.1 16.5C55.6 460.1 105.5 448 144 448c33.9 0 79 14 105.6 23.5zm76.8 0C353 462 398.1 448 432 448c38.5 0 88.4 12.1 119.9 22.6c11.3 3.8 24.1-4.6 24.1-16.5l0-370.3c0-12.1-6.8-23.3-18.1-27.6C529.7 45.3 482.5 32 432 32c-58.4 0-103.4 20-123 35.6c-3.3 2.6-5 6.8-5 11L304 456c0 11.4 11.7 19.3 22.4 15.5z" />
-            </svg>
-          </div>
-          <div class="icon-box-content fade-in">
-            <h4 class="card-title mb-1 text-capitalize text-dark">Online Reading</h4>
-            <p>Read your favorite books anytime, anywhere with our web reader.</p>
-          </div>
-        </div>
-      </div>
+      
       <div class="col-lg-3 col-md-6 pb-3 pb-lg-0 zoom-in">
         <div class="icon-box d-flex">
           <div class="icon-box-icon pe-3 pb-3">
@@ -76,10 +64,11 @@ require_once $_SERVER['DOCUMENT_ROOT'] . $baseUrl . "/view/layout/header.php";
           </div>
           <div class="icon-box-content fade-in">
             <h4 class="card-title mb-1 text-capitalize text-dark">E-Books</h4>
-            <p>Download and read thousands of e-books on any device.</p>
+            <p>Read a vast collection of e-books anytime on any device.</p>
           </div>
         </div>
       </div>
+
       <div class="col-lg-3 col-md-6 pb-3 pb-lg-0 zoom-in">
         <div class="icon-box d-flex">
           <div class="icon-box-icon pe-3 pb-3">
@@ -93,6 +82,21 @@ require_once $_SERVER['DOCUMENT_ROOT'] . $baseUrl . "/view/layout/header.php";
           </div>
         </div>
       </div>
+
+      <div class="col-lg-3 col-md-6 pb-3 pb-lg-0 zoom-in">
+        <div class="icon-box d-flex">
+          <div class="icon-box-icon pe-3 pb-3">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+              <path d="M249.6 471.5c10.8 3.8 22.4-4.1 22.4-15.5l0-377.4c0-4.2-1.6-8.4-5-11C247.4 52 202.4 32 144 32C93.5 32 46.3 45.3 18.1 56.1C6.8 60.5 0 71.7 0 83.8L0 454.1c0 11.9 12.8 20.2 24.1 16.5C55.6 460.1 105.5 448 144 448c33.9 0 79 14 105.6 23.5zm76.8 0C353 462 398.1 448 432 448c38.5 0 88.4 12.1 119.9 22.6c11.3 3.8 24.1-4.6 24.1-16.5l0-370.3c0-12.1-6.8-23.3-18.1-27.6C529.7 45.3 482.5 32 432 32c-58.4 0-103.4 20-123 35.6c-3.3 2.6-5 6.8-5 11L304 456c0 11.4 11.7 19.3 22.4 15.5z" />
+            </svg>
+          </div>
+          <div class="icon-box-content fade-in">
+            <h4 class="card-title mb-1 text-capitalize text-dark">Journaling</h4>
+            <p>Write, reflect, and track your thoughts with our journaling feature.</p>
+          </div>
+        </div>
+      </div>
+
       <div class="col-lg-3 col-md-6 pb-3 pb-lg-0 zoom-in">
         <div class="icon-box d-flex">
           <div class="icon-box-icon pe-3 pb-3">
@@ -112,18 +116,18 @@ require_once $_SERVER['DOCUMENT_ROOT'] . $baseUrl . "/view/layout/header.php";
 <!--Services-info end-->
 
 <!-- harry potter Books -->
-<section id="best-selling-items" class="position-relative padding-large slide-in">
+<section id="best-selling-items" class="position-relative padding-large ">
   <div class="your-element" data-aos="fade-in">
     <div class="container">
       <div class="section-title d-md-flex justify-content-between align-items-center mb-4">
-        <h3 class="d-flex align-items-center">Harry Potter Books</h3>
-        <a href="view/pages/books.php" class="btn">View All</a>
+        <h3 class="d-flex align-items-center slide-in">Harry Potter Books</h3>
+        <a href="view/pages/books.php" class="btn slide-in">View All</a>
       </div>
       <div class="swiper-button-next"></div>
       <div class="swiper-button-prev"></div>
 
       <div class="swiper product-swiper">
-        <div class="swiper-wrapper" id="harry-potter-books">
+        <div class="swiper-wrapper slide-in" id="harry-potter-books">
           <!-- Harry Potter books will be dynamically inserted here -->
         </div>
         <!-- Add Swiper navigation buttons -->
@@ -324,19 +328,19 @@ require_once $_SERVER['DOCUMENT_ROOT'] . $baseUrl . "/view/layout/header.php";
 <!--Audiobook Section end-->
 
 <!--Books section-->
-<section id="best-selling-items" class="position-relative padding-large slide-in">
+<section id="best-selling-items" class="position-relative padding-large ">
   <div class="your-element" data-aos="fade-in">
     <div class="container">
       <div class="section-title d-md-flex justify-content-between align-items-center mb-4">
-        <h3 class="d-flex align-items-center"> Books</h3>
-        <a href="view/pages/books.php" class="btn">View All</a>
+        <h3 class="d-flex align-items-center slide-in"> Books</h3>
+        <a href="view/pages/books.php" class="btn slide-in">View All</a>
       </div>
        <!-- Add Swiper navigation buttons -->
        <div class="swiper-button-prev"></div>
         <div class="swiper-button-next"></div>
 
-      <div class="swiper product-swiper">
-        <div class="swiper-wrapper" id="all-books">
+      <div class="swiper product-swiper ">
+        <div class="swiper-wrapper slide-in" id="all-books">
           <!-- books will be dynamically inserted here -->
         </div>
        

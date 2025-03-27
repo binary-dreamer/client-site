@@ -34,14 +34,14 @@ if (!$book) {
         <div class="back-button-container">
             <div class="audioBPM">
                 <marquee class="marq" bgcolor="#F9F9F9" direction="left" scrollamount="8">
-                    <span class="audiosinglepage">Enjoy listening to your audiobooks!!</span>
-                    <span class="audiosinglepage">Enjoy listening to your audiobooks!!</span>
-                    <span class="audiosinglepage">Enjoy listening to your audiobooks!!</span>
-                    <span class="audiosinglepage">Enjoy listening to your audiobooks!!</span>
-                    <span class="audiosinglepage">Enjoy listening to your audiobooks!!</span>
-                    <span class="audiosinglepage">Enjoy listening to your audiobooks!!</span>
-                    <span class="audiosinglepage">Enjoy listening to your audiobooks!!</span>
-                    <span class="audiosinglepage">Enjoy listening to your audiobooks!!</span>
+                <span class="audiosinglepage">🎧 Escape reality, one audiobook at a time! 📖✨</span>
+                <span class="audiosinglepage">📚 Immerse yourself in stories that speak to you! 🔊</span>
+                <span class="audiosinglepage">🎶 Let your imagination run wild with every word! 🚀</span>
+                <span class="audiosinglepage">💡 Listen. Dream. Explore. Repeat. 🎙️🌍</span>
+                <span class="audiosinglepage">📖 Every audiobook is an adventure waiting to unfold! 🔥</span>
+                <span class="audiosinglepage">🎵 Tune in to a world where words come alive! 🌟</span>
+                <span class="audiosinglepage">🚀 Let your ears take you places your eyes can’t! 🎙️</span>
+                <span class="audiosinglepage">✨ Stories that whisper, excite, and inspire—just hit play! 🎧</span>
                 </marquee>
             </div>
 
