@@ -83,5 +83,23 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
+document.addEventListener('DOMContentLoaded', function() {
+  const elements = document.querySelectorAll('.slide-in, .flip-in, .zoom-in');
+
+  function checkVisibility() {
+    elements.forEach(element => {
+      const rect = element.getBoundingClientRect();
+      if (rect.top <= window.innerHeight && rect.bottom >= 0) {
+        element.classList.add('visible');
+      } else {
+        element.classList.remove('visible');
+      }
+    });
+  }
+
+  window.addEventListener('scroll', checkVisibility);
+  checkVisibility(); // Check visibility on page load
+});
+
 
 

@@ -1934,6 +1934,166 @@ select {
   background-color: #f1f8f6;
   color: #20C997;
 }
+
+/* Back to Top Button */
+.back-to-top {
+  position: fixed; /* Ensure it stays fixed on scroll */
+  bottom: 20px;
+  right: 20px;
+  display: none; /* Initially hidden */
+  z-index: 1000; /* Ensure it's above other elements */
+  background-color: #20c997; /* Theme color */
+  border: none;
+  color: white;
+  transition: all 0.3s ease-in-out;
+  width: 60px;  /* Slightly reduced for better proportions */
+  height: 60px; /* Ensure a perfect circle */
+  font-size: 24px; /* Adjust icon size */
+  border-radius: 50%; /* Ensures perfect circular shape */
+  display: flex; /* Use flexbox for centering */
+  align-items: center; /* Centers content vertically */
+  justify-content: center; /* Centers content horizontally */
+  cursor: pointer; /* Adds pointer effect for better UX */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Adds slight shadow */
+}
+
+/* Hover Effect */
+.back-to-top:hover {
+  background-color: #7cd7bc; /* Slightly different shade on hover */
+  transform: scale(1.1);
+}
+
+/* Ensuring the arrow is properly centered */
+.back-to-top i {
+  line-height: 1; /* Fix any alignment issues */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* Custom styles for the accordion */
+.accordion-button {
+  background-color: #20c997; /* Set the background color */
+  color: white; /* Set the text color */
+  border: none;
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: #20c997; /* Darker shade for active state */
+  color: white;
+  box-shadow: none;
+}
+
+.accordion-button:focus {
+  border-color: #20c997;
+  box-shadow: 0 0 0 0.25rem rgba(32, 201, 151, 0.25);
+}
+
+.accordion-item {
+  border: 1px solid #20c997;
+  border-radius: 0.25rem;
+  margin-bottom: 1rem;
+}
+
+.accordion-body {
+  background-color: #f8f9fa; /* Light background for the body */
+  color: #343a40;
+  border-top: 1px solid #20c997;
+}
+
+
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateX(-100%);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  .slide-in {
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+
+  .slide-in.visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  @keyframes flipIn {
+    from {
+      opacity: 0;
+      transform: rotateX(90deg);
+    }
+    to {
+      opacity: 1;
+      transform: rotateX(0deg);
+    }
+  }
+
+  .flip-in {
+    opacity: 0;
+    transform: rotateX(90deg);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+
+  .flip-in.visible {
+    opacity: 1;
+    transform: rotateX(0deg);
+  }
+
+  @keyframes zoomIn {
+    from {
+      opacity: 0;
+      transform: scale(0.5);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  .zoom-in {
+    opacity: 0;
+    transform: scale(0.5);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+
+  .zoom-in.visible {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+/* Enhanced Shaking Animation */
+@keyframes enhancedShake {
+  0%, 100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  20% {
+    transform: translate(-3px, 1px) rotate(-1deg);
+  }
+  40% {
+    transform: translate(3px, -1px) rotate(1deg);
+  }
+  60% {
+    transform: translate(-2px, 1px) rotate(-0.5deg);
+  }
+  80% {
+    transform: translate(2px, -1px) rotate(0.5deg);
+  }
+}
+
+/* Apply the enhanced animation to the image */
+.image-holder img {
+  animation: enhancedShake 3s infinite ease-in-out;
+}
+
+
 /* searchbox  */
 /* .search-form {
   display: flex;

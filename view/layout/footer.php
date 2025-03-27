@@ -58,19 +58,19 @@ $baseUrl = '/client-site';
               <h5 class="widget-title pb-2">Quick Links</h5>
               <ul class="menu-list list-unstyled text-capitalize">
                 <li class="menu-item mb-1">
-                  <a href="#">Home</a>
+                  <a href="<?= $baseUrl ?>/index.php">Home</a>
                 </li>
                 <li class="menu-item mb-1">
-                  <a href="#">Books</a>
+                  <a href="<?= $baseUrl ?>/view/pages/books.php">Books</a>
                 </li>
                 <li class="menu-item mb-1">
-                  <a href="#">Audiobooks</a>
+                  <a href="<?= $baseUrl ?>/view/pages/audiobooks.php">Audiobooks</a>
                 </li>
                 <li class="menu-item mb-1">
-                  <a href="#">About</a>
+                  <a href="<?= $baseUrl ?>/view/pages/journaling.php">Journaling</a>
                 </li>
                 <li class="menu-item mb-1">
-                  <a href="#">Contact</a>
+                  <a href="<?= $baseUrl ?>/view/pages/contact.php">Contact</a>
                 </li>
               </ul>
             </div>
@@ -80,7 +80,7 @@ $baseUrl = '/client-site';
               <h5 class="widget-title pb-2">Help & Info Help</h5>
               <ul class="menu-list list-unstyled">
                 <li class="menu-item mb-1">
-                  <a href="#">Contact Us</a>
+                  <a href="<?= $baseUrl ?>/view/pages/contact.php">Contact Us</a>
                 </li>
                 <li class="menu-item mb-1">
                   <a href="#">Faqs</a>
@@ -118,6 +118,32 @@ $baseUrl = '/client-site';
     </div>
   </div>
 </div>
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-primary btn-lg-square rounded-circle back-to-top"><i class="fa fa-arrow-up"></i></a> 
+
+<script>
+  // Show the button when scrolling down
+window.addEventListener("scroll", function () {
+    var backToTop = document.querySelector(".back-to-top");
+    if (window.scrollY > 200) {
+        backToTop.style.display = "block";
+    } else {
+        backToTop.style.display = "none";
+    }
+});
+
+// Smooth scroll to top on click
+document.querySelector(".back-to-top").addEventListener("click", function (e) {
+    e.preventDefault();
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+});
+
+</script>
+
 
 <script src="<?= $baseUrl ?>/assets/js/jquery-1.11.0.min.js"></script>
 <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
