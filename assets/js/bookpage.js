@@ -1,5 +1,21 @@
 $(document).ready(function () {
     const baseUrl = "/client-site";
+    
+    console.log("jQuery Version:", $.fn.jquery);
+
+    if (typeof $.fn.turn === "undefined") {
+        console.warn("Turn.js not detected! Trying to load manually...");
+
+        $.getScript("https://cdnjs.cloudflare.com/ajax/libs/turn.js/3/turn.min.js")
+            .done(function () {
+                console.log("Turn.js is now loaded:", typeof $.fn.turn);
+            })
+            .fail(function () {
+                console.error("Failed to load Turn.js!");
+            });
+    } else {
+        console.log("Turn.js is already loaded!");
+    }
 
     console.log("Book ID:", bookId); // Debugging
 
@@ -35,7 +51,7 @@ $(document).ready(function () {
 
             for (let i = 1; i <= totalPages; i++) {
                 pdf.getPage(i).then(function (page) {
-                    var scale = 2.0; // Adjusted for better readability
+                    var scale = 2.0;
                     var viewport = page.getViewport({ scale: scale });
 
                     var canvas = document.createElement("canvas");
@@ -65,112 +81,115 @@ $(document).ready(function () {
         });
     }
 
+
     function loadMagazineView(pdfUrl) {
-        $('#magazine').html('');
-        
-        pdfjsLib.getDocument(pdfUrl).promise.then(function(pdf) {
+        $("#magazine").html(""); // Clear previous content
+    
+        pdfjsLib.getDocument(pdfUrl).promise.then(function (pdf) {
             const totalPages = pdf.numPages;
-            const promises = [];
+            const magazine = $("#magazine");
+    
+            let promises = [];
     
             for (let i = 1; i <= totalPages; i++) {
-                promises.push(
-                    pdf.getPage(i).then(function(page) {
-                        const canvas = document.createElement('canvas');
-                        const context = canvas.getContext('2d');
-                        
-                        // Set dimensions for better viewing
-                        const desiredWidth = 2000;
-                        const viewport = page.getViewport({ scale: 1.0 });
-                        const scale = desiredWidth / viewport.width;
-                        const scaledViewport = page.getViewport({ scale });
+                let promise = pdf.getPage(i).then(function (page) {
+                    return new Promise((resolve) => {
+                        let scale = 1.5; 
+                        let viewport = page.getViewport({ scale: scale });
     
-                        canvas.width = scaledViewport.width;
-                        canvas.height = scaledViewport.height;
+                        let canvas = document.createElement("canvas");
+                        let context = canvas.getContext("2d");
+                        canvas.width = viewport.width;
+                        canvas.height = viewport.height;
     
-                        return page.render({
-                            canvasContext: context,
-                            viewport: scaledViewport
-                        }).promise.then(function() {
-                            const div = document.createElement('div');
-                            div.className = 'page';
-                            div.style.width = `${scaledViewport.width}px`;
-                            div.style.height = `${scaledViewport.height}px`;
-                            div.appendChild(canvas);
-                            return div;
+                        let renderContext = { canvasContext: context, viewport: viewport };
+    
+                        page.render(renderContext).promise.then(() => {
+                            let pageDiv = document.createElement("div");
+                            pageDiv.classList.add("page"); // Use class "page" instead of "hard"
+                            pageDiv.style.background = `url(${canvas.toDataURL("image/png")}) no-repeat center center`;
+                            pageDiv.style.backgroundSize = "contain";
+    
+                            resolve(pageDiv);
                         });
-                    })
-                );
+                    });
+                });
+    
+                promises.push(promise);
             }
     
-            Promise.all(promises).then(function(pages) {
-                const magazine = $('#magazine');
-                pages.forEach(page => {
+            Promise.all(promises).then(function (pages) {
+                pages.forEach((page) => {
                     magazine.append(page);
                 });
     
-                // Initialize turn.js with enhanced settings
-                magazine.turn({
-                    display: 'double',
-                    acceleration: true,
-                    gradients: true,
-                    elevation: 50,
-                    width: pages[0].offsetWidth * 2,
-                    height: pages[0].offsetHeight,
-                    autoCenter: true,
-                    when: {
-                        turning: function(e, page, view) {
-                            // Add page turning sound effect
-                            const audio = new Audio('/client-site/assets/sounds/page-flip.mp3');
-                            audio.play();
-                        },
-                        turned: function(e, page) {
-                            // Add page number display
-                            const currentPage = magazine.turn('page');
-                            const totalPages = magazine.turn('pages');
-                            $('#page-number').text(`Page ${currentPage} of ${totalPages}`);
+                // Initialize turn.js AFTER all pages are loaded
+                if (typeof $.fn.turn !== "undefined") {
+                    console.log("Initializing turn.js...");
+                    magazine.turn({
+                        width: 1000,
+                        height: 800,
+                        elevation: 50,
+                        gradients: true,
+                        autoCenter: true,
+                        display: "double",
+                        acceleration: true, 
+                        when: {
+                            turning: function (event, page, view) {
+                                $("#page-number").text(`Page ${page} of ${totalPages}`);
+                            },
+                            turned: function (event, page, view) {
+                                $(this).turn('center');
+                            }
                         }
-                    }
-                });
-    
-                // Add navigation controls
-                addNavigationControls(magazine);
+                    });
+                } else {
+                    console.error("Turn.js is still not loaded!");
+                }
             });
+        }).catch(function (error) {
+            console.error("Error loading PDF:", error);
+            $("#magazine").html('<div class="alert alert-danger">Error loading the book. Please try again.</div>');
         });
     }
     
+
     function addNavigationControls(magazine) {
-        // Add zoom controls
         let currentZoom = 1;
-        
-        $('.zoom-in').click(function() {
-            currentZoom += 0.2;
-            magazine.css('transform', `scale(${currentZoom})`);
+        const zoomStep = 0.2;
+
+        $('.zoom-in').off('click').on('click', function () {
+            currentZoom = Math.min(2.5, currentZoom + zoomStep);
+            magazine.css({
+                'transform': `scale(${currentZoom})`,
+                'transform-origin': 'center center'
+            });
         });
-    
-        $('.zoom-out').click(function() {
-            currentZoom = Math.max(0.5, currentZoom - 0.2);
-            magazine.css('transform', `scale(${currentZoom})`);
+
+        $('.zoom-out').off('click').on('click', function () {
+            currentZoom = Math.max(0.5, currentZoom - zoomStep);
+            magazine.css({
+                'transform': `scale(${currentZoom})`,
+                'transform-origin': 'center center'
+            });
         });
-    
-        // Keyboard navigation
-        $(document).keydown(function(e) {
-            switch(e.keyCode) {
-                case 37: magazine.turn('previous'); break;
-                case 39: magazine.turn('next'); break;
-            }
-        });
-    
-        // Mouse wheel navigation
-        magazine.bind('mousewheel', function(e) {
-            if (e.originalEvent.wheelDelta > 0) {
-                magazine.turn('previous');
-            } else {
-                magazine.turn('next');
+
+        $(document).off('keydown').on('keydown', function (e) {
+            if ($("#magazineModal").is(":visible")) {
+                switch (e.keyCode) {
+                    case 37:
+                        magazine.turn('previous');
+                        e.preventDefault();
+                        break;
+                    case 39:
+                        magazine.turn('next');
+                        e.preventDefault();
+                        break;
+                }
             }
         });
     }
 
-    // Existing click handler for regular flipbook
     $(document).on("click", ".view-flipbook-btn", function () {
         var pdfUrl = $(this).attr("data-pdf");
         var bookTitle = $(this).attr("data-title");
@@ -180,7 +199,6 @@ $(document).ready(function () {
         $("#flipbookModal").modal("show");
     });
 
-    // New click handler for magazine view
     $(document).on("click", ".view-magazine-btn", function () {
         const pdfUrl = $(this).attr("data-pdf");
         const bookTitle = $(this).attr("data-title");
@@ -190,21 +208,11 @@ $(document).ready(function () {
         $("#magazineModal").modal("show");
     });
 
-    // Cleanup when magazine modal is closed
-    $("#magazineModal").on("hidden.bs.modal", function() {
+    $("#magazineModal").on("hidden.bs.modal", function () {
         const magazine = $('#magazine');
         if (magazine.data().turn) {
             magazine.turn('destroy');
         }
-    });
-
-    $(document).on("click", ".view-flipbook-btn", function () {
-        var pdfUrl = $(this).attr("data-pdf");
-        var bookTitle = $(this).attr("data-title");
-
-        $("#flipbookModalLabel").text(bookTitle); // Fixed: Corrected modal title update
-        loadPdfAsImages(pdfUrl);
-        $("#flipbookModal").modal("show");
     });
 
     loadBookDetails();

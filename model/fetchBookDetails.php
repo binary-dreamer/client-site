@@ -23,10 +23,10 @@ if ($book_id > 0) {
                     <span class="language"><i class="fas fa-globe"></i> Language: English</span>
                 </div>
                 <span class="ebook-category">' . htmlspecialchars($book['genre_name']) . '</span>
-                <a href="#" class="wishlist-btn">
-                    <span class="wishlist-icon"><i class="fas fa-heart"></i></span>
-                    <span>Add to Wishlist</span>
-                </a>
+<a href="#" class="wishlist-btn" data-book-id="<?= $book_id; ?>">
+    <span class="wishlist-icon"><i class="fas fa-heart"></i></span>
+    <span>Add to Wishlist</span>
+</a>
                 <div class="rating-container mt-4">
                     <span class="rating-text">Rating: </span>
                     <div class="star-rating">
