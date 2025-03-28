@@ -74,16 +74,21 @@ $book_id = isset($_GET['id']) ? intval($_GET['id']) : 0;
     </div>
 </div>
 
+<!-- jQuery (Only Load Once) -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.12.313/pdf.min.js"></script>
-<!-- Add these new scripts -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/turn.js/3/turn.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/turn.js/3/turn.html4.min.js"></script>
-<!-- End of new scripts -->
 
+<!-- PDF.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.12.313/pdf.min.js"></script>
+
+<!-- Turn.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/turn.js/3/turn.min.js"></script>
+
+<!-- Book ID from PHP -->
 <script>
-    const bookId = <?= $book_id ?>; // Embedding book ID directly in JavaScript
+    const bookId = <?= $book_id ?>; 
 </script>
+
+<!-- Your JS File -->
 <script src="/client-site/assets/js/bookpage.js"></script>
 
 <?php require_once $_SERVER['DOCUMENT_ROOT'] . $baseUrl . "/view/layout/footer.php"; ?>
