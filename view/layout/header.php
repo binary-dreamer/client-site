@@ -1,19 +1,24 @@
 <?php
-$baseUrl = '/client-site';
-$adminUrl = '/NovelNest';
 
 if (session_status() === PHP_SESSION_NONE) {
   session_start();
 }
 
-// Ensure profile image is set
-if (!isset($_SESSION['user_profile']) || empty($_SESSION['user_profile'])) {
-  $_SESSION['user_profile'] = "http://localhost/client-site/assets/images/default-avatar.jpg";
+$baseUrl = '/client-site';
+$adminUrl = '/NovelNest';
+
+
+header("Content-Type: text/html; charset=UTF-8");
+
+
+if (!isset($_SESSION['user_profile_image']) || empty($_SESSION['user_profile_image'])) {
+  $_SESSION['user_profile_image'] = "$baseUrl/assets/images/default-avatar.jpg";
 }
 
-// Check if user is logged in
+
 $userName = $_SESSION['user_name'] ?? null;
-$userProfileImage = $_SESSION['user_profile'] ?? 'assets/images/default-avatar.jpg';
+$userProfileImage = $_SESSION['user_profile_image'] ?? "$baseUrl/assets/images/default-avatar.jpg";
+
 ?>
 
 <!DOCTYPE html>
@@ -22,6 +27,11 @@ $userProfileImage = $_SESSION['user_profile'] ?? 'assets/images/default-avatar.j
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' https://js.stripe.com; font-src 'self' https://fonts.gstatic.com;"> -->
+
+ 
+
 
   <!-- SEO Meta Tags -->
   <meta name="description" content="Explore a vast collection of books with NovelNest. Read online, download e-books, listen to audiobooks, and dive into genres like fiction, horror, fantasy, and historical novels. Enjoy unlimited reading with flexible subscription plans.">
@@ -60,27 +70,29 @@ $userProfileImage = $_SESSION['user_profile'] ?? 'assets/images/default-avatar.j
       }
     }
   </script>
-
+  
   <!-- Favicon -->
   <link rel="icon" href="<?= $baseUrl ?>/assets/images/monogram.png" type="image/x-icon">
 
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-  <!-- Bootstrap Icons -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+  <!--  Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
+  <!--  Google Fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700;800;900;1000&display=swap">
 
+  <!--  Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!--  Swiper & AOS CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+
+  <!--  Custom CSS -->
   <link rel="stylesheet" type="text/css" href="<?= $baseUrl ?>/assets/css/style.css">
 
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
-  <!-- AOS CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
-
+  <!--  Include Stripe.js -->
+  <script src="https://js.stripe.com/v3/"></script>
 </head>
-
 <body>
 
   <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
@@ -189,53 +201,43 @@ $userProfileImage = $_SESSION['user_profile'] ?? 'assets/images/default-avatar.j
 
 
 
-  <div class="search-popup">
-    <div class="search-popup-container">
 
-      <form role="search" method="get" class="search-form" action="">
-        <input type="search" id="search-form" class="search-field" placeholder="Type and press enter" value=""
-          name="s" />
-        <button type="submit" class="search-submit"><svg class="search">
-            <use xlink:href="#search"></use>
-          </svg></button>
-      </form>
+  <!-- Topbar Start -->
+  <!-- <div class="container-fluid topbar px-0 px-lg-4 bg-light py-2 d-none d-lg-block">
+    <div class="container">
+      <div class="row gx-0 align-items-center">
+        <div class="col-lg-8 text-center text-lg-start mb-lg-0">
+          <div class="d-flex flex-wrap">
 
-      <h5 class="cat-list-title">Browse Categories</h5>
+            <div class="ps-3">
+              <a href="mailto:example@gmail.com" class="text-black small"><i class="fas fa-envelope text-primary me-2"></i>novelnestinfo@gmail.com</a>
+             </div> 
+          </div>
+        </div>
+        <div class="col-lg-4 text-center text-lg-end">
+          <div class="d-flex justify-content-end">
+            <div class="d-flex border-end border-primary pe-3">
+              <a class=" p-0 text-black me-3" href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a> 
+              <a class=" p-0 text-black me-3" href="https://x.com/?mx=2"><i class="fa-brands fa-x-twitter"></i></a>
+              <a class=" p-0 text-black me-3" href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+              <a class=" p-0 text-black me-0" href="https://www.youtube.com/"><i class="fab fa-youtube"></i></a>
+            </div>
 
-      <ul class="cat-list">
-        <li class="cat-list-item">
-          <a href="#" title="Romance">Romance</a>
-        </li>
-        <li class="cat-list-item">
-          <a href="#" title="Thriller">Thriller</a>
-        </li>
-        <li class="cat-list-item">
-          <a href="#" title="Sci-fi">Sci-fi</a>
-        </li>
-        <li class="cat-list-item">
-          <a href="#" title="Cooking">Cooking</a>
-        </li>
-        <li class="cat-list-item">
-          <a href="#" title="Health">Health</a>
-        </li>
-        <li class="cat-list-item">
-          <a href="#" title="Lifestyle">Lifestyle</a>
-        </li>
-        <li class="cat-list-item">
-          <a href="#" title="Fiction">Fiction</a>
-        </li>
-      </ul>
 
+          </div>
+        </div>
+      </div>
     </div>
   </div>
+  </div>  -->
+  <!-- Topbar End -->
+
 
   <header id="header" class="site-header">
 
-
-
     <nav id="header-nav" class="navbar navbar-expand-lg py-3">
       <div class="container">
-        <a class="navbar-brand" href="index.html">
+        <a class="navbar-brand" href="<?= $baseUrl ?>/index.php">
           <img src="<?= $baseUrl ?>/assets/images/logo.png" class="logo" style="max-width: 200px; height: auto; display: block;">
         </a>
         <button class="navbar-toggler d-flex d-lg-none order-3 p-2" type="button" data-bs-toggle="offcanvas"
@@ -246,7 +248,7 @@ $userProfileImage = $_SESSION['user_profile'] ?? 'assets/images/default-avatar.j
         </button>
         <div class="offcanvas offcanvas-end" tabindex="-1" id="bdNavbar" aria-labelledby="bdNavbarOffcanvasLabel">
           <div class="offcanvas-header px-4 pb-0">
-            <a class="navbar-brand" href="index.html">
+            <a class="navbar-brand" href="<?= $baseUrl ?>/index.php">
               <img src="<?= $baseUrl ?>/assets/images/logo.png" class="logo" style="max-width: 200px; height: auto; display: block;">
             </a>
             <button type="button" class="btn-close btn-close-black" data-bs-dismiss="offcanvas" aria-label="Close"
@@ -263,37 +265,51 @@ $userProfileImage = $_SESSION['user_profile'] ?? 'assets/images/default-avatar.j
               <li class="nav-item">
                 <a class="nav-link me-4" href="<?= $baseUrl ?>/view/pages/audiobooks.php">AudioBooks</a>
               </li>
+              <li class="nav-item">
+                <a class="nav-link me-4" href="<?= $baseUrl ?>/view/pages/journaling.php">Journaling</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link me-4" href="<?= $baseUrl ?>/view/pages/contact.php">Contact</a>
+              </li>
               <!-- <li class="nav-item">
       <a class="nav-link me-4" href="index.html">About</a>
     </li> -->
             </ul>
 
+
+
+
             <div class="user-items d-flex">
               <ul class="d-flex justify-content-end list-unstyled mb-0">
                 <li class="nav-item pe-3">
                   <?php if (isset($_SESSION['user_id'])): ?>
-                    <!-- Show profile image, username, and logout button after login -->
 
-                    <img src="<?= htmlspecialchars($userProfileImage); ?>"
-                      alt="User Profile" width="35" height="35" class="rounded-circle">
-                    <span class="ms-2"><?= htmlspecialchars($_SESSION['user_name']); ?></span>
-                    <a class="btn btn-danger ms-3" href="/client-site/logout.php" style="font-size: 14px; padding: 5px 10px; line-height: 2;">
-                      <i class="bi bi-box-arrow-right"></i> Logout
-                    </a>
+                    <!-- Dropdown for logged-in users -->
+                    <div class="dropdown">
+                      <div class="d-flex align-items-center dropdown-toggle" id="profileDropdown" data-bs-toggle="dropdown" aria-expanded="false" style="cursor: pointer;">
+                        <img src="<?= htmlspecialchars($userProfileImage); ?>" alt="User Profile" width="35" height="35" class="rounded-circle">
+                        <span class="ms-2"><?= htmlspecialchars($_SESSION['user_name']); ?></span>
+                      </div>
+                      <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">
+                        <li><a class="dropdown-item" href="<?= $baseUrl ?>/view/pages/accountsetting.php">Account Settings</a></li>
+                        <!-- <li><a class="dropdown-item" href="<?= $baseUrl ?>/view/pages/subscription.php">Subscription</a></li> -->
+                        <li><a class="dropdown-item" href="<?= $baseUrl ?>/view/pages/journaling.php">Journaling</a></li>
+                        <li><a class="dropdown-item" href="<?= $baseUrl ?>/view/pages/wishlist.php">Wishlist</a></li>
+                        <li>
+                          <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item text-danger" href="/client-site/logout.php"><i class="bi bi-box-arrow-right"></i> Logout</a></li>
+                      </ul>
+                    </div>
+
                   <?php else: ?>
                     <!-- Show Sign Up and Sign In buttons before login -->
-                    <a href="<?= $adminUrl ?>/view/signup/signup.php"
-                      class="btn btn-primary me-2"
-                      style="font-size: 14px; padding: 5px 10px; line-height: 2;">
+                    <a href="<?= $adminUrl ?>/view/signup/signup.php" class="btn btn-primary me-2" style="font-size: 14px; padding: 5px 10px; line-height: 2;">
                       Sign Up
                     </a>
-
-                    <a href="<?= $adminUrl ?>/view/admin/adminSigninForm.php"
-                      class="btn btn-secondary"
-                      style="font-size: 14px; padding: 5px 10px; line-height: 2;">
+                    <a href="<?= $adminUrl ?>/view/admin/adminSigninForm.php" class="btn btn-secondary" style="font-size: 14px; padding: 5px 10px; line-height: 2;">
                       Sign In
                     </a>
-
                   <?php endif; ?>
                 </li>
               </ul>
@@ -303,26 +319,6 @@ $userProfileImage = $_SESSION['user_profile'] ?? 'assets/images/default-avatar.j
         </div>
       </div>
     </nav>
-
-    <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const navLinks = document.querySelectorAll('#navbar .nav-link');
-    const currentPath = window.location.pathname;
-
-    navLinks.forEach(link => {
-      const linkPath = link.getAttribute('href')?.replace(/^.*\/\/[^\/]+/, '');
-
-      if (currentPath === linkPath) {
-        link.classList.add('active');
-      }
-
-      link.addEventListener('click', () => {
-        navLinks.forEach(navLink => navLink.classList.remove('active'));
-        link.classList.add('active');
-      });
-    });
-  });
-</script>
 
 
 
