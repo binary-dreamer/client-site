@@ -66,14 +66,5 @@ The repository is structured into two main applications:
    - Start your local Apache and MySQL servers.
    - Open your browser and navigate to `http://localhost/novelnest/public/` to view the main site, or `http://localhost/novelnest/admin/` for the admin portal.
 
-## ❓ FAQ
-
-**Q: Can I download books to read offline?**
-A: To keep our platform simple and secure, NovelNest provides anytime, anywhere web access without the need for downloads. No need to worry about storage space or losing files!
-
-**Q: Is NovelNest free to use?**
-A: We operate on a subscription-based model. A small subscription fee grants you unlimited access to reading, audiobooks, and journaling without any annoying ads or interruptions.
-
----
 
 *Enjoy your reading and listening journey with NovelNest!* 🦉📖
