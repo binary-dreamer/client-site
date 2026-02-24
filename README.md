@@ -41,7 +41,7 @@ The repository is structured into two main applications:
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/your-username/novelnest.git
+   git clone https://github.com/binary-dreamer/NovelNest.git
    ```
 
 2. **Setup the Database:**
